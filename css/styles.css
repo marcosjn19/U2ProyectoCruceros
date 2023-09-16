@@ -71,6 +71,14 @@ button:hover{
 hr {
     margin: 1rem 0 1rem;
 }
+
+footer {
+    height: 10rem;
+    width: 100%;
+    background-image: url(/media/footer.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 /*-----------------------------------------------------------------------------------------------------*/
 /*              ENCABEZADO          */
 /* NAVEGACION */
@@ -321,4 +329,13 @@ hr {
 
 .promocion-reservar:hover {
     color: var(--resalte-cuadro);
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*              FOOTER          */
+.footer-main-content {
+    height: 100%;
+    position: relative;
+    background-image: linear-gradient(180deg, rgba(0,0,0,.3) 100%, rgba(60,69,60,1) 0%);
+    text-align: center;
 }
