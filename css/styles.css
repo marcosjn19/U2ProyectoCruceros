@@ -17,7 +17,8 @@ html {
 }
 
 body {
-    background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(80,80,80,1) 91%);
+    background-color: black;
+    background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(60,60,60,1) 91%);
 }
 
 p{
@@ -195,7 +196,7 @@ hr {
 }
 
 .contenido-experiencias-img {
-    background-image: url(/media/cruceroHeader.jpeg);
+    background-image: url(/media/partyShip.jpg);
     background-repeat: no-repeat;
     background-size:   cover;
 }
@@ -268,16 +269,26 @@ hr {
     margin: .5rem 0px;
 }
 
-.promocion-img1 {
+.promocion-img {
     height: 15rem;
     width: 100%;
-    background-image: url(/media/costasGrecias.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
 }
 
+.img1 {
+    background-image: url(/media/costasGrecias.jpeg);
+}
+
+.img2 {
+    background-image: url(/media/santorini.jpeg);
+}
+
+.img3 {
+    background-image: url(/media/costaBrava.jpg);
+}
 .promocion h3{
     margin-top: 0;
     margin-bottom: 0;
