@@ -1,3 +1,26 @@
+/* IMAGEN-PRINCIPAL */
+.encabezado-contact {
+    background-image: url(/media/limassol-cyprus-old-ruins.jpg);
+    background-repeat: no-repeat;
+    background-size:   cover;
+    height: 55rem;
+    width: 100%;
+}
+
+.contenido-encabezado-contact {
+    background-color: rgba(0, 0, 0, 0.45);
+    height: 100%;
+    width:  100%;
+    position:relative
+}
+.contenido-encabezado-contact p {
+    font-size: 4rem;
+    font-family: 'Judson', serif;
+    margin: 1rem;
+    text-transform: uppercase;
+}
+
+/*Formulario*/
 .content{
     max-width: 1170px;
     margin-left: auto;
@@ -8,6 +31,7 @@
 .logo{
     text-align: center;
     font-size: 3em;
+    color: #ffffff;
 }
 
 .logo span{
@@ -29,22 +53,9 @@
 
 .contact-datos h3{
     color: #FFD700;
-}
-
-.encabezado-contactanos {
-    background-image: url(/media/cruceroHeader.jpg);
-    
-    background-repeat: no-repeat;
-    background-size:   cover;
-    height: 55rem;
-    width: 100%;
-}
-
-.contenido-encabezado-contactanos {
-    background-color: rgba(0, 0, 0, 0.45);
-    height: 100%;
-    width:  100%;
-    position:relative
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
 }
 
 .contact-datos form{
@@ -87,14 +98,16 @@ form input, form textarea{
     outline: 0;
 
 }
-
+s
 .contact-info h4,
 .contact-info ul, 
 .contact-inf p{
     text-align: center;
     color: #fff;
     margin: 0 0 1rem 0;
+    font-size: 2rem;
 }
+
 
 .contact-info ul{
     list-style: none;
