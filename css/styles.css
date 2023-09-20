@@ -311,6 +311,7 @@ footer {
 }
 
 .icono-info {
+    margin-left: .8rem;
     height: 4rem;
     width:  auto;
 }
@@ -356,25 +357,32 @@ footer {
 /* IMAGEN-PRINCIPAL */
 .encabezado-experiencias {
     background-image: url(/media/fiestaCrucero.jpg);
+}
+
+.encabezado-reservaciones {
+    background-image: url(/media/gastronomia.jpeg);
+}
+
+.encabezado-experiencias, .encabezado-reservaciones {
     background-repeat: no-repeat;
     background-size:   cover;
     height: 55rem;
     width: 100%;
 }
 
-.contenido-encabezado-experiencias {
+.contenido-encabezado-experiencias, .contenido-encabezado-reservaciones {
     background-color: rgba(0, 0, 0, 0.6);
     height: 100%;
     width:  100%;
     position:relative
 }
 
-.contenido-encabezado-experiencias .mensaje {
+.contenido-encabezado-experiencias .mensaje, .contenido-encabezado-reservaciones .mensaje {
     margin: auto auto;
     width: 50%;
 }
 
-.contenido-encabezado-experiencias p {
+.contenido-encabezado-experiencias p, .contenido-encabezado-reservaciones p {
     font-size: 3.3rem;
     font-family: 'Judson', serif;
     font-weight: bold; 
@@ -382,7 +390,7 @@ footer {
 }
 
 @media (min-width: 768px){ 
-    .contenido-encabezado-experiencias p {
+    .contenido-encabezado-experiencias p, .contenido-encabezado-reservaciones p {
         font-size: 6rem;
         font-family: 'Judson', serif;
         font-weight: bold; 
