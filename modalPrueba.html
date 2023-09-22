@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel = "preload" href = "./css/normalize.css" as = "style">
+    <link rel = "stylesheet" href = "./css/normalize.css">
+    <link rel =  "preoload" href = "./css/styles.css" as = "style">
+    <link href = "./css/styles.css" rel = "stylesheet">  
+
+    <title>Document</title>
+</head>
+<body>
+    <button id = "botonModal"> MI BOTON</button>
+
+     <!-- PARA COMPRAR BOLETOS -->
+     <section>
+        <div id = "modalCompra" class = "modal">
+            <div class = "contenedor-modal">
+                <h3>Seleccione su cabina</h3>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- CODIGO DEL MODAL -->
+    <script>
+        var modal = document.getElementById("modalCompra");
+        var btn   = document.getElementById("botonModal");
+
+        btn.onclick = function(){
+            modal.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

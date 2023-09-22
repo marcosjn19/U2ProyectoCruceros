@@ -464,3 +464,25 @@ footer {
 .exp-img3 {
     background-image: url(/media/fiestaCrucero2.jpeg);
 }
+
+/*---------------------MODAL------------------------------------*/
+
+.modal {
+    display: none; 
+    position: relative; 
+    z-index: 3;
+    width: 100%; 
+    height: 100%; 
+    margin: 0 auto
+  }
+  
+  .modal p {
+    color: var(--negro);
+  }
+
+  .contenedor-modal {
+    background-color: var(--blanco);
+    margin: auto;
+    width: 100%;
+    height: 35rem;
+  }
