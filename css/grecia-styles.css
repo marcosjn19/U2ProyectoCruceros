@@ -1,0 +1,47 @@
+/* IMAGEN-PRINCIPAL */
+.encabezado-grecias  {
+    background-image: url(/media/cruceroHeader.jpg);
+    background-repeat: no-repeat;
+    background-size:   cover;
+    height: 55rem;
+    width: 100%;
+}
+
+.contenido-encabezado-grecias {
+    background-color: rgba(0, 0, 0, 0.45);
+    height: 100%;
+    width:  100%;
+    position: relative;
+}
+
+.contenido-encabezado-grecias li {
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.contenido-encabezado-grecias p {
+    font-size: 3rem;
+    font-family: 'Judson', serif;
+    margin: 1rem;
+    text-transform: uppercase;
+}
+
+.cuadro-reservacion{
+    background-color: aliceblue;
+    border-radius: 2rem;
+}
+
+.cuadro-reservacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 50%; 
+    right: 0;   
+    
+}
+.cuadro-reservacion h3, p{
+    color: #000000;
+    
+}

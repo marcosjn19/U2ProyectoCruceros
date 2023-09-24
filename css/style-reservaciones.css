@@ -1,6 +1,6 @@
 
 .encabezado-reserva-grecia {
-    background-image: url(/media/grecia2.jpg);
+    background-image: url(/media/santorini.jpg);
     
     background-repeat: no-repeat;
     background-size:   cover;
@@ -54,14 +54,70 @@
     list-style: none;
     font-family: 'Titillium Web';
 }
-
+.intinerario h3{
+    color: #FFFFFF;
+    font-size: 3rem;
+    font-family: 'Titillium Web';
+}
 .rutas{
     padding-top: 2rem;
     padding-left: 3rem;
 
 }
 
-/* botoncito */
+
+
+
+/*--------------------RECUADRO DE RESERVACION----------------*/
+.cuadro-reservacion{
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+/*POSICIONES*/
+.cuadro-reservacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    padding: 1rem;   
+    top: 50%; 
+    right: 10%;   
+    margin: 1rem;
+    
+}
+.cuadro-reservacion h3, p{
+    color: #000000;
+    text-align: left;
+    
+    
+}
+
+.precio-principal{
+     padding: .5rem;
+}
+
+.cuadro-reservacion h3{
+    font-size: 4rem;
+}
+.texto-reserva{
+    color: #000000;
+    margin: 1rem;
+}
+
+
+.precio_habitaciones{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    gap: 5rem;
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+
+
+
+  /* botoncito */
 .boton {
     align-items: center;
     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
@@ -83,90 +139,25 @@
 
 .boton:active,
 .boton:hover {
-  outline: 0;
+    outline: 0;
 }
 
 .boton span {
-  background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  transition: 300ms;
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
 }
 
 .boton:hover span {
-  background: none;
+    background: none;
 }
 
 @media (min-width: 768px) {
-  .boton {
+    .boton {
     font-size: 24px;
     min-width: 196px;
-  }
+    }
 }
-
-
-
-/*--------------------RECUADRO DE RESERVACION----------------*/
-.cuadro-reservacion{
-    background-color: aliceblue;
-    border-radius: 2rem;
-}
-/*POSICIONES*/
-.cuadro-reservacion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: absolute;
-    padding: 2rem;   
-    top: 50%; 
-    right: 10%;   
-    
-}
-.cuadro-reservacion h3, p{
-    color: #000000;
-    
-}
-.texto-reserva{
-    color: #000000;
-    margin: 1rem;
-}
-
-/*footer*/
-footer {
-    background-color: #3498db; /* Color de fondo del footer */
-    position: relative;
-    height: 200px; /* Ajusta la altura según tus necesidades */
-  }
-  
-  .wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50px; /* Altura de la ola */
-    background-color: #fff; /* Color de la ola */
-    border-radius: 100% 100% 0 0; /* Forma de la ola */
-  }
-  
-  .wave::before {
-    content: '';
-    position: absolute;
-    bottom: 25px; /* Ajusta la posición vertical de la ola */
-    left: 0;
-    right: 0;
-    height: 25px; /* Altura de la ola */
-    background-color: #3498db; /* Color de fondo del footer */
-  }
-  
-  .wave::after {
-    content: '';
-    position: absolute;
-    bottom: 25px; /* Ajusta la posición vertical de la ola */
-    left: 0;
-    right: 0;
-    height: 25px; /* Altura de la ola */
-    background-color: #3498db; /* Color de fondo del footer */
-  }
