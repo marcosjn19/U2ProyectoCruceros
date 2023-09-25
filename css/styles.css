@@ -495,3 +495,47 @@ footer {
     background-size:contain;
     background-position: center;
 }
+
+/*-------------------------  QUIENES SOMOS -----------------------------------*/
+.contenido-info{
+    padding: 2rem;
+    background-color: #E8E8E8;
+}
+.contenido-info h3{
+    background-color: #E8BD73;
+    color: #3d55ef;
+    font-size: 4rem;
+    text-align: left;
+}
+
+.contenido-info p{
+    color: #000000;
+    font-family: 'TITALIUM WEb';
+    font-size: 2rem;
+    text-align: left;
+}
+
+.encabezado-quienesSomos {
+    background-image: url(/media/españa2.jpg);
+    
+    background-repeat: no-repeat;
+    background-size:   cover;
+    height: 55rem;
+    width: 100%;
+
+}
+
+
+.contenido-encabezado_quienesSomos{
+    background-color: rgba(0, 0, 0, 0.45);
+    height: 100%;
+    width:  100%;
+    position:relative;
+   
+}
+.contenido-encabezado_quienesSomos p {
+    font-size: 4rem;
+    font-family: 'Krona One';
+    margin: 1rem;
+    text-transform: uppercase;
+}
