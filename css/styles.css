@@ -509,7 +509,7 @@ footer {
 }
 
 .contenido-info p{
-    color: #000000;
+    color: #ffffff;
     font-family: 'TITALIUM WEb';
     font-size: 2rem;
     text-align: left;
@@ -531,11 +531,15 @@ footer {
     height: 100%;
     width:  100%;
     position:relative;
-   
+
 }
 .contenido-encabezado_quienesSomos p {
     font-size: 4rem;
     font-family: 'Krona One';
     margin: 1rem;
     text-transform: uppercase;
+}
+
+.contenido-info{
+    background-color: rgba(0, 0, 0, 0.4);
 }

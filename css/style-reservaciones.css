@@ -30,13 +30,9 @@
     background-color: rgba(0, 0, 0, 0.45);
     height: 100%;
     width:  100%;
-<<<<<<< Updated upstream
     position:relative;
-   
-=======
-    position: relative;
->>>>>>> Stashed changes
 }
+
 .contenido-encabezado-reserva p {
     font-size: 4rem;
     font-family: 'Judson', serif;
@@ -46,8 +42,7 @@
 
 /*----------- INTINERARIO-------------------------*/
 .intinerario {
-    margin-left: 10rem;
-   
+    margin-left: 10rem;   
     padding: 2rem;
     display: inline-block;
     background-color: rgba(27, 27, 28, 0.55);
