@@ -204,7 +204,7 @@ footer {
 }
 
 .contenido-experiencias-img {
-    background-image: url(/media/partyShip.jpg);
+    background-image: url(/media/expe-inolvidables.jpg);
     background-repeat: no-repeat;
     background-size:   cover;
 }
@@ -360,7 +360,7 @@ footer {
 }
 
 .encabezado-reservaciones {
-    background-image: url(/media/gastronomia.jpeg);
+    background-image: url(/media/cruceroyop.jpg);
 }
 
 .encabezado-experiencias, .encabezado-reservaciones {
@@ -454,15 +454,15 @@ footer {
 }
 
 .exp-img1 {
-    background-image: url(/media/gastronomia.jpeg);
+    background-image: url(/media/comidita3.jpg);
 }
 
 .exp-img2 {
-    background-image: url(/media/entretenimiento.jpeg);
+    background-image: url(/media/espectaculo.jpg);
 }
 
 .exp-img3 {
-    background-image: url(/media/fiestaCrucero2.jpeg);
+    background-image: url(/media/picina.jpg);
 }
 
 /*---------------------MODAL------------------------------------*/
