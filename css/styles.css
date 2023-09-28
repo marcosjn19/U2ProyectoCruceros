@@ -540,6 +540,10 @@ footer {
     background-color: rgba(0,0,0,0);
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 2rem;
+    -webkit-box-shadow: 20px 10px 47px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 20px 10px 47px -9px rgba(0,0,0,0.75);
+    box-shadow: 20px 10px 47px -9px rgba(0,0,0,0.75);
 }
 
 @media (min-width: 768px){ 
@@ -645,18 +649,35 @@ footer {
     background-color: #E8E8E8;
 }
 .contenido-info h3{
-    background-color: #E8BD73;
-    color: #3d55ef;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(0, 0, 0);
     font-size: 4rem;
-    text-align: left;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+@media (min-width: 768px){ 
+   .contenido-info h3 {
+        width: 50%;
+        margin:auto;
+   }
 }
 
 .contenido-info p{
     color: #ffffff;
     font-family: 'TITALIUM WEb';
     font-size: 2rem;
-    text-align: left;
+    text-align: center;
 }
+
+@media (min-width: 768px){ 
+    .contenido-info p {
+         text-align: left;
+         width: 70%;
+         margin: 4rem auto;
+    }
+ }
 
 .encabezado-quienesSomos {
     background-image: url(/media/españa2.jpg);
