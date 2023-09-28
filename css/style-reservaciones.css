@@ -41,12 +41,7 @@
 }
 /*----------- Contenedor ------------------*/
 
-.contenedor{
-    display: block;
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 /*----------- INTINERARIO-------------------------*/
 .intinerario {
@@ -57,6 +52,7 @@
     background-color: rgba(27, 27, 28, 0.55);
     text-align: center;
     position: relative;
+    left: 10%;
 }
 .intinerario li{
     color: #FFFFFF;
@@ -70,23 +66,22 @@
     font-family: 'Titillium Web';
 }
 
-
-
-
-
-
 /*--------------------RECUADRO DE RESERVACION----------------*/
 .cuadro-reservacion{
     background-color: aliceblue;
     border-radius: 1rem;
-    position: relative;
+    position: absolute;
     
 
 }
 
 /*------POSICIONES-------*/
 .cuadro-reservacion {
-    display: block;  
+    display: block;
+    top: 135%; 
+    left: 1%;
+    
+      
     
 }
 .cuadro-reservacion h3, p{
@@ -121,7 +116,7 @@
 
 
 
-  /* botoncito */
+  /*------------botoncito-------------------------*/
 .boton {
     align-items: center;
     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
@@ -166,23 +161,19 @@
     }
 }
 /*------------media querys---------------*/
-@media (max-width: 768px){
-    .intinerario, .cuadro-reservacion{
-        width: 100%;
-   
-    }
-
+@media (min-width: 768px){
+    
     .cuadro-reservacion{
-        
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;         
-            padding: 1rem;              
-            margin: 1rem;
-            
+     
+        display: inline-block;
+        position: relative;
+        padding: 2rem; 
+        top: 50%;  
+        left: 40%;   
+        margin: 1rem;
         
     }
+    
     
     
 }
