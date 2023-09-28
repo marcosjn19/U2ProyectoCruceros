@@ -482,14 +482,97 @@ footer {
 
 .contenedor-modal {
     background-color: var(--blanco);
+    background-image: url("/media/fondoBlur.jpg");
     margin: auto;
     width: 100%;
-    height: 90rem;
+    height: 150rem;
   }
 
+.contenedor-modal h2 {
+    margin-top: 2rem;
+    color: var(--negro);
+    font-size: 4rem;
+}
+
+@media (min-width: 768px){ 
+   .contenedor-modal {
+        width: 100%;
+        height: 90rem;
+   }
+}
+
+.contenedor-boletos {
+    display: flexbox;
+    width: 100%;
+}
+
+@media (min-width: 768px){ 
+   .contenedor-boletos {
+        display: flex;
+   }
+}
+
+.contenedor-info-boletos {
+    margin-top: 1rem;
+    display: flexbox;
+    width: 100%;
+    margin-right: auto;
+    margin-top: 8rem;
+}
+
+@media (min-width: 768px){ 
+    .contenedor-info-boletos{
+        width: 50%;
+    }
+}
+.contenedor-info-boletos p {
+    font-size: 2.5rem;
+    font-family: 'Judson', serif;;
+}
+
+.contenedor-info-boletos span {
+    font-weight: 700;
+}
+
+#imagen-cabina {
+    width: 100%;
+    height: 25rem;
+    background-color: rgba(0,0,0,0);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 768px){ 
+   #imagen-cabina {
+    height: 50%;
+   }
+}
+.botont2 {
+    height: 4rem;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: var(--resalte-claro);
+    color: var(--negro);
+    font-size: 2rem;
+}
+
+.botont2:hover {
+    background-color: var(--resalte-cuadro);
+    color: var(--blanco);
+    filter:blur(.3px);
+}
+
+@media (min-width: 768px){ 
+   .botont2 {
+        width: 100%;
+        margin-bottom: 2rem;
+   }
+}
+
 .contenedor-barco {
+    background-color: rgba(0,0,0,0);
     margin:auto;
-    height: 85%;
+    height: 80rem;
     width: 40rem;
     display: grid; 
     grid-template-columns: 1.3fr 0.7fr 0.7fr 0.7fr 1.3fr; 
@@ -503,21 +586,31 @@ footer {
     ". . . . ."
     ". . . . ."
     "Cola Cola Cola Cola Cola"; 
+    margin-bottom: 1rem;
 }
 
 .Punta { 
     grid-area: Punta; 
-    background-color: black;
+    background-image: url("/media/superior.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
 }
 .Cola { 
     grid-area: Cola; 
-    background-color: black;
+    background-image: url("/media/inferior.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
 }
 
 .cabina {
-    background-color: var(--gris-claro);
+    background-color: rgba(158,158,158,0.4);
     border-color: black;
     border-style: double;
+    border-radius: 1rem;
     padding: 2rem;
 }
 
