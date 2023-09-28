@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,19 +31,21 @@
     <title>Reserva</title>
 </head>
 <body>
-
+    <script src = "cabina.js"></script>
+<div class = "contenedor-principal-todo">
     <section class = "encabezado-reserva-italia">
         <div class = "contenido-encabezado-reserva"> 
             <div class = "nav-bg">
                 <nav class = "nav-contenedor">
-                    <a class = "nav-title" href="index.html">ATLACTIC CRUISER</a>
+                    <a class = "nav-title" href="index.html">ATLANTIC CRUISER</a>
                     <a class = "nav-link" href = "experiencias.html">EXPERIENCIAS</a>
-                    <a class = "nav-link" href = "#">¿QUIENES SOMOS?</a>
+                    <a class = "nav-link" href = "quienes_somos.html">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.html">RESERVACIONES</a>
                     <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
                 </nav>
             </div>                
         </div>
+        <div class = "info-barco">
         <div class = "intinerario">
             <div class="rutas">
                 <ul>
@@ -101,10 +103,76 @@
                     
                 </div>
                 <br>
-                <button class="boton" role="boton">
+                <button class="boton" role="boton" id = "botonModal">
                     <span class="text"> Reservar </span></button>
             </div>
         </div>
+        </div>
         </section>  
+</div>
+<section>
+    <div id = "modalCompra" class = "modal">
+        <div class = "contenedor-modal">
+            <h2>Reservar cabina</h2>
+            <div class = "contenedor-boletos">
+                <div class = "contenedor-barco">
+                    <div class = "Punta"></div>
+                    <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$17000"><p>1</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>2</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>3</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>4</p></div>
+                    <div class = "cabina familiar ocupada"><p>5</p></div>
+
+                    <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$16789"><p>6</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>7</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>8</p></div>
+                    <div class = "cabina individual ocupada" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>9</p></div>
+                    <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$16789"><p>10</p></div>
+
+                    <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$16789"><p>11</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>12</p></div>
+                    <div class = "cabina individual ocupada" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>13</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>14</p></div>
+                    <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$16789"><p>15</p></div>
+
+                    <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$16789"><p>16</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>17</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>18</p></div>
+                    <div class = "cabina individual ocupada" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>19</p></div>
+                    <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$16789"><p>20</p></div>
+                    
+                    <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$16789"><p>21</p></div>
+                    <div class = "cabina individual ocupada" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>22</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>23</p></div>
+                    <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11499><p>24</p></div>
+                    <div class = "cabina familiar ocupada" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$16789"><p>25</p></div>
+
+                    <div class = "Cola"></div>
+                </div>
+                <div class = "contenedor-info-boletos">
+                    <h3 id = "tipo-cabina"> Selecciona una cabina</h3>
+                    <div id = "imagen-cabina"></div>
+                    <p> Capacidad de: <span id = "capacidad-cabina">x personas</span></p>
+                    <button class = "botont2" onclick = "window.location.href='pagos.html'"> RESSERVAR -></button>
+                    <p> Precio por persona de: <span id = "precio-cabina">Selecciona una cabina</span></p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CODIGO DEL MODAL -->
+<script>
+    var modal = document.getElementById("modalCompra");
+    var btn   = document.getElementById("botonModal");
+
+    btn.onclick = function(){
+        modal.style.display = "block";
+    }
+</script>
+
 </body>
 </html>

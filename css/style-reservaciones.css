@@ -1,4 +1,10 @@
 
+.contenedor-principal-todo {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 .encabezado-reserva-grecia {
     background-image: url(/media/santorini.jpg);
     
@@ -76,14 +82,31 @@
 }
 
 /*------POSICIONES-------*/
+
+.info-barco {
+    display: flexbox;
+    height: 100rem;
+}
+
+@media (min-width: 768px){ 
+   .info-barco {
+    display: block;
+    height: auto;
+   }
+}
+
 .cuadro-reservacion {
     display: block;
-    top: 135%; 
-    left: 1%;
-    
-      
-    
+    margin-top: 1rem; 
 }
+
+@media (min-width: 768px){ 
+    .cuadro-reservacion {
+        top: 135%; 
+        left: 1%;
+    }
+}
+
 .cuadro-reservacion h3, p{
     color: #000000;
     text-align: left;
