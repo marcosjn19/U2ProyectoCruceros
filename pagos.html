@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGOS</title>
+    <title>ATLANTIC CRUSIERS</title>
+
+    <link rel = "preload" href = "./css/normalize.css" as = "style">
+    <link rel = "stylesheet" href = "./css/normalize.css">
+    <link rel =  "preoload" href = "./css/styles.css" as = "style">
+    <link href = "./css/styles.css" rel = "stylesheet">  
+    <link rel =  "preoload" href = "./css/style-compra.css" as = "style">
+    <link href = "./css/style-compra.css" rel = "stylesheet">  
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Judson:wght@400;700&display=swap" rel="stylesheet">
+    <!--/*font-family: 'Judson', serif;*/ -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <!--font-family: 'Krona One', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class = "encabezado">
+        <div class = "contenido-encabezado"> 
+            <div class = "nav-bg">
+                <nav class = "nav-contenedor">
+                    <a class = "nav-title" href = "index.html">ATLANTIC CRUISER</a>
+                    <a class = "nav-link" href = "experiencias.html">EXPERIENCIAS</a>
+                    <a class = "nav-link" href = "quienes_somos.html">¿QUIENES SOMOS?</a>
+                    <a class = "nav-link" href = "reservaciones.html">RESERVACIONES</a>
+                    <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
+                </nav>
+            </div>    
+        </div>
+
+
+    </section>
+    <main id="main">
+    <section id="derecha">
+    <h1>PAGO</h1>
+		<form action="#">
+			<div id="formulario-tarjeta" class="campo">
+				<label for="num-seg">Ingresa numerito :</label>
+				<input id="num-seg" maxlength="19" placeholder="ingresa numerito" required>
+			</div>
+
+			<div id="formulario-fecha" class="campo">
+				<label for="Mes-expira">Fecha de expiracion:</label>
+				<div id="valores">
+		    <select id="Mes-expira" required>
+					<option id="desplegable-mes" value="" default="default" selected="selected">Mes</option>
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+            </select>
+        <select id="Expiracion" required>
+                <option id="año-expira" value="" default="" selected="selected">Año</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+        </select>
+            </div>
+        </div>
+        
+        <div id="" class="campo">
+            <label>NUMERO DE SEGURIDAD:</label>
+            <input type="password" maxlength="3" placeholder="123" required>
+        </div>
+        
+        <button type="submit" class="boton">Comprar</button>
+        <div class="contenedor">
+        <button type="submit" class="paypal">o</button>
+        </div>
+    </form>
+    </section>
+    </body>
+</main>
+</html>

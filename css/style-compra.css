@@ -1,0 +1,164 @@
+body {
+	
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+    background: linear-gradient(#1c1c1c, #000000);
+    font-size: 2rem;
+    color: #faf7f7;
+
+}
+h1{
+    color: #faf7f7;
+}
+
+#main {
+	position: relative;
+	width: 57rem;
+	height: 53rem;
+    align-items: center;
+    justify-content: center;
+	left: 3rem;
+    background: linear-gradient( #131312, #000000);
+    margin: 0 auto;
+    text-align: center;
+	border-radius: 10px;
+	background-color: white;
+}
+
+
+#derecha {
+	position: absolute;
+	height: 100%;	
+	display: flex;
+	flex-flow: column nowrap;
+	padding-left: 25%;
+}
+
+#derecha form {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+}
+
+#derecha form input,
+#derecha form select {
+	
+	appearance:none;
+	border: none;
+	border-bottom: 1.5px solid #ccc;
+	
+	padding: 5PX;
+	margin-top: 2.5px;
+	position: relative;
+}
+
+#derecha form .campo {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	margin-bottom: 12.5px;
+}
+
+#derecha form #valores {
+	display: flex;
+	justify-content: space-between;
+}
+
+#derecha form #valores select {
+	width: 45%;
+}
+
+#derecha form .boton[type="submit"] {
+
+	
+
+
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    
+}
+.boton span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.boton:hover span {
+    background: none;
+}
+
+.boton:active,
+.boton:hover {
+    outline: 0;
+}
+
+
+
+@media (min-width: 768px) {
+    .boton {
+    font-size: 24px;
+    min-width: 196px;
+    }
+}
+
+
+#derecha .paypal {
+    background-image: url('/media/paypal.png');
+    height: 8rem;
+    width: 8rem;
+    align-items: center;
+    background-size: 100% 100%; /* Ajusta el tamaño de la imagen al 100% del ancho y alto del botón */
+    color: #443b3b; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno para el botón */
+    /* Elimina el borde del botón (opcional) */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón (opcional) */
+    
+   
+    border-radius: 5rem;
+    margin-left: auto; /* Mueve el botón a la derecha */
+  margin-right: auto; /* Mueve el botón a la derecha */
+  margin-top: auto; /* Lo centra verticalmente */
+  padding: 10px 20px; /* Espaciado interno para el botón */
+   /* Color de fondo del botón (personalizable) */
+   /* Color del texto del botón (personalizable) */
+  
+ 
+}
+
+@media (max-width: 786px){
+    #main {
+        width: 100%; 
+        left: 0; 
+      }
+    
+      #derecha {
+        position: static; /* Elimine la posición absoluta */
+        width: 100%; /* Haga que el div derecho ocupe todo el ancho */
+        padding-left: 0; /* Elimine el padding izquierdo */
+      }
+    
+      #derecha form input,
+      #derecha form select {
+        width: 100%; /* Haga que los campos de entrada y selección ocupen todo el ancho disponible */
+      }
+
+    }
+
+
