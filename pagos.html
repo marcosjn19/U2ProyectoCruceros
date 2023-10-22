@@ -47,44 +47,28 @@
     <section id="derecha">
     <h1>PAGO</h1>
 		<form action="#">
-			<div id="formulario-tarjeta" class="campo">
-				<label for="num-seg">Ingresa numerito :</label>
-				<input id="num-seg" maxlength="19" placeholder="ingresa numerito" required>
+			<div id="formulario-compra" class="campo">
+				<label for="nombre-crucero">Crucero seleccionado:</label>
+				<input id="nombre-crucero" maxlength="100" value = "Nombre crucero" type = "text" readonly = "true">
 			</div>
 
-			<div id="formulario-fecha" class="campo">
-				<label for="Mes-expira">Fecha de expiracion:</label>
+			<div id="formulario-datos" class="campo">
+				<label for="nombre-cliente">Datos del cliente:</label>
 				<div id="valores">
-		    <select id="Mes-expira" required>
-					<option id="desplegable-mes" value="" default="default" selected="selected">Mes</option>
-                    <option value="1">01</option>
-                    <option value="2">02</option>
-                    <option value="3">03</option>
-                    <option value="4">04</option>
-                    <option value="5">05</option>
-                    <option value="6">06</option>
-                    <option value="7">07</option>
-                    <option value="8">08</option>
-                    <option value="9">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-            </select>
-        <select id="Expiracion" required>
-                <option id="año-expira" value="" default="" selected="selected">Año</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-                <option value="2028">2028</option>
-        </select>
+                <input id="nombre-cliente" placeholder = "Nombre" type = "text" required>
+                <input id ="correo-cliente"placeholder = "Correo" type = "text" required>
+                </div>
             </div>
-        </div>
-        
-        <div id="" class="campo">
-            <label>NUMERO DE SEGURIDAD:</label>
-            <input type="password" maxlength="3" placeholder="123" required>
-        </div>
+            
+            <div id="" class="campo">
+                <label>Numero de boletos:</label>
+                <input class = "number" type="number" value = "1" required>
+            </div>
+
+            <div id = "" class = campo>
+                <label> Total a pagar: </label>
+                <input id = "totalPagar" class = "total" type = "text" value = "$21341" readonly = "true">
+            </div>
         
         <button type="submit" class="boton">Comprar .</button>
         <div class="contenedor">
