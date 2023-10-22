@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sesion ola</title>
+    <link rel = "preload" href = "./css/normalize.css" as = "style">
+    <link rel = "stylesheet" href = "./css/normalize.css">
+    <link rel =  "preoload" href = "./css/styles.css" as = "style">
+    <link href = "./css/styles.css" rel = "stylesheet"> 
+    <link rel =  "preoload" href = "./css/login-register.css" as = "style">
+    <link href = "./css/login-register.css"rel = "stylesheet"> 
+
+</head>
+<body>
+    
+    <section class = "encabezado">
+        <div class = "contenido-encabezado"> 
+            <div class = "nav-bg">
+                <nav class = "nav-contenedor">
+                    <a class = "nav-title" href = "index.html">ATLANTIC CRUISER</a>
+                    <a class = "nav-link" href = "experiencias.html">EXPERIENCIAS</a>
+                    <a class = "nav-link" href = "quienes_somos.html">¿QUIENES SOMOS?</a>
+                    <a class = "nav-link" href = "reservaciones.html">RESERVACIONES</a>
+                    <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
+                </nav>
+            </div>          
+        </div>
+    </section>
+    <main>
+    <div class="contedor__todo">
+        <div class="parte-trasera">
+            <div class = "parte-trasera-login">
+                <h3>¿Tienes una cuenta?</h3>
+                <p> Inicia sesion para comprar</p>
+                <button id="btn-iniciar-sesion">Inicia Sesion</button>
+            </div>
+            <div class = "parte-trasera-registro">
+                <h3>¿Aun no tienes cuenta?</h3>
+                <p> Regitrate para ingresar</p>
+                <button id="btn-resgistrar">Registrate</button>
+            </div>
+        </div>
+
+        <!--Formulario de Login y registro-->
+        <div class="contenedor__login-registro">
+            <!--Login-->
+            <form action="" class="formulario-login">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" placeholder="Correo Electronico">
+                <input type="password" placeholder="Contraseña">
+                <button>Entrar</button>
+            </form>
+
+            <!--Registro-->
+            <form action="" class="formulario-registro">
+                <h2>Regístrarse</h2>
+                <input type="text" placeholder="Nombre completo">
+                <input type="text" placeholder="Correo Electronico">
+                <input type="password" placeholder="Contraseña">
+                <button>Regístrarse</button>
+            </form>
+        </div>
+    </div>
+</main>
+<script src="login.js"></script>
+</body>
+</html>
