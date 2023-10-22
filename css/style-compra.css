@@ -14,8 +14,8 @@ h1{
 
 #main {
 	position: relative;
-	width: 57rem;
-	height: 53rem;
+	width: 100%;
+	height: 60rem;
     align-items: center;
     justify-content: center;
 	left: 3rem;
@@ -60,20 +60,22 @@ h1{
 	margin-bottom: 12.5px;
 }
 
+#derecha form #nombre-crucero{
+    margin-top: 1rem;
+}
 #derecha form #valores {
+    margin-top: 1rem;
 	display: flex;
 	justify-content: space-between;
 }
 
-#derecha form #valores select {
+#derecha form #valores input {
 	width: 45%;
 }
 
 #derecha form .boton[type="submit"] {
-
-	
-
-
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     align-items: center;
     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
     border: 1;
@@ -110,7 +112,23 @@ h1{
 }
 
 
+#derecha .number {
+    margin: auto;
+    margin-top: 1rem;
+    width: 7rem;
+}
 
+#derecha .total {
+    margin: auto;
+    margin-top:1rem;
+    width: 20rem;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0);
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: bold;
+}
 @media (min-width: 768px) {
     .boton {
     font-size: 24px;
@@ -154,11 +172,11 @@ h1{
         padding-left: 0; /* Elimine el padding izquierdo */
       }
     
-      #derecha form input,
-      #derecha form select {
-        width: 100%; /* Haga que los campos de entrada y selección ocupen todo el ancho disponible */
-      }
-
+      #derecha form input{
+        width: 90%; /* Haga que los campos de entrada y selección ocupen todo el ancho disponible */
+        margin:auto;
     }
+
+}
 
 
