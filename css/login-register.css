@@ -1,0 +1,114 @@
+.contedor__todo{
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    position: relative;
+
+}
+
+
+.parte-trasera{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(253, 172, 34, 0.8);
+
+}
+
+.parte-trasera div{
+    margin: 6.25rem 2.5rem;
+    color: white;
+    transition: all 500ms;
+
+}
+
+.parte-trasera div p
+.parte-trasera div button{
+    margin-top: 38px;
+    
+}
+
+.parte-trasera div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.parte-trasera button{
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+.parte-trasera button:hover{
+    background: #fff;
+    color: #f5b521;
+}
+
+/*Formularios*/
+
+.contenedor__login-registro{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedor__login-registro form{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-registro form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffa616;
+}
+
+.contenedor__login-registro form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor__login-registro form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: #ff9e1f;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+
+.formulario-login{
+    opacity: 1;
+    display: block;
+}
+.formulario-registro{
+    display: none;
+}
+
