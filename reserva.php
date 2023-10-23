@@ -43,9 +43,14 @@
     $consultaCrucero = "SELECT * FROM CRUCERO WHERE id_crucero = '$id_crucero';";
     $resultCrucero = mysqli_query($conexion, $consultaCrucero);
 
-    $fila = mysqli_fetch_assoc($resultCrucero);
-    echo $fila['destino_crucero'];
-    mysqli_close($conexion);
+    if (!$resultCrucero) {
+    die("Error en la consulta: " . mysqli_error($conexion));
+    } else {
+        $fila = mysqli_fetch_assoc($resultCrucero);
+        echo $fila['destino_crucero'];
+        mysqli_close($conexion);    
+    }
+
 ?>
 
     <script src = "cabina.js"></script>
