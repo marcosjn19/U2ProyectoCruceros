@@ -40,10 +40,11 @@
 
     $conexion = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname, "3306") or die
     ("PROBLEMAS DE CONEXION");
-    $consultaCrucero = "SELECT * FROM CRUCERO WHERE id_crucero = '$id_crucero';"
+    $consultaCrucero = "SELECT * FROM CRUCERO WHERE id_crucero = '$id_crucero';";
     $resultCrucero = mysqli_query($conexion, $consultaCrucero);
 
-    echo($resultCrucero[0]);
+    $fila = mysqli_fetch_assoc($resultCrucero);
+    echo $fila['destino_crucero'];
 ?>
 
     <script src = "cabina.js"></script>
