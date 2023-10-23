@@ -45,6 +45,7 @@
 
     $fila = mysqli_fetch_assoc($resultCrucero);
     echo $fila['destino_crucero'];
+    mysqli_close($conexion);
 ?>
 
     <script src = "cabina.js"></script>
