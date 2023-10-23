@@ -33,9 +33,9 @@
 <body>
 <?php
     $dbhost = "localhost";
-    $dbname = "alumnos2";
-    $dbuser = "root";
-    $dbpass = "";
+    $dbname = "u768297978_atlanticruiser";
+    $dbuser = "u768297978_admin";
+    $dbpass = "Prograweb123#";
     $id_crucero = 1;
 
     $conexion = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname, "3306") or die
@@ -47,7 +47,6 @@
     die("Error en la consulta: " . mysqli_error($conexion));
     } else {
         $fila = mysqli_fetch_assoc($resultCrucero);
-        echo $fila['destino_crucero'];
         mysqli_close($conexion);    
     }
 
@@ -97,7 +96,9 @@
         <div class="precio-principal">1
         <h3>$25,029 </h3>
         <p class="texto-reserva">
-        13 noches en España, Francia y la peninsula iberica
+        <?php 
+            echo($fila['descripcion_crucero']);
+        ?>
         </p>
         <hr>
         </div>
