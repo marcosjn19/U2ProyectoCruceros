@@ -1,16 +1,5 @@
 <?php
-    $dbhost = "localhost";
-    $dbname = "alumnos2";
-    $dbuser = "root";
-    $dbpass = "";
-    $id_crucero = 1;
-
-    $conexion = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname, "3306") or die
-    ("PROBLEMAS DE CONEXION");
-    $consultaCrucero = "SELECT * FROM CRUCERO WHERE id_crucero = '$id_crucero';"
-    $resultCrucero = mysqli_query($conexion, $consultaCrucero);
-
-    echo($resultCrucero[0]);
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
