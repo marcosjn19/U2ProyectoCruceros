@@ -43,6 +43,14 @@
     $consultaCrucero = "SELECT * FROM CRUCERO WHERE id_crucero = '$id_crucero';";
     $resultCrucero = mysqli_query($conexion, $consultaCrucero);
 
+    $consultaPrecio1 = "SELECT precio_rcc FROM CABINA_CRUCERO WHERE id_crucero = '$id_crucero' AND id_cabina = 3;";
+    $consultaPrecio2 = "SELECT precio_rcc FROM CABINA_CRUCERO WHERE id_crucero = '$id_crucero' AND id_cabina = 5;";
+    $consultaPrecio3 = "SELECT precio_rcc FROM CABINA_CRUCERO WHERE id_crucero = '$id_crucero' AND id_cabina = 15;";
+
+    $precio1 = mysqli_fetch_assoc(mysqli_query($conexion, $consultaPrecio1));
+    $precio2 = mysqli_fetch_assoc(mysqli_query($conexion, $consultaPrecio2));
+    $precio3 = mysqli_fetch_assoc(mysqli_query($conexion, $consultaPrecio3));
+
     if (!$resultCrucero) {
     die("Error en la consulta: " . mysqli_error($conexion));
     } else {
@@ -94,7 +102,7 @@
     </div>         
     <div class="cuadro-reservacion"> 
         <div class="precio-principal">1
-        <h3>$25,029 </h3>
+        <h3><?php echo "$".$precio1['precio_rcc'] ?> </h3>
         <p class="texto-reserva">
         <?php 
             echo($fila['descripcion_crucero']);
@@ -106,22 +114,22 @@
 
             <div class="precio_habitaciones_categoria">
                 <div class="tipo_habitacion_normal"> Normal </div>
-                    <div class="tipo_habitacion_balcon">$25,867</div>
+                    <div class="tipo_habitacion_balcon"><?php echo "$".$precio1['precio_rcc'] ?></div>
             </div>  
 
             <div class="precio_habitaciones_categoria">
                 <div class="tipo_habitacion_normal"> Balcon </div>
-                    <div class="tipo_habitacion_balcon">$28,012</div>
+                    <div class="tipo_habitacion_balcon"><?php echo "$".$precio2['precio_rcc'] ?></div>
             </div> 
 
             <div class="precio_habitaciones_categoria">
                 <div class="tipo_habitacion_normal"> Premium </div>
-                    <div class="tipo_habitacion_balcon">$52,123</div>
+                    <div class="tipo_habitacion_balcon"><?php echo "$".$precio3['precio_rcc'] ?></div>
             </div>   
 
             <div class="precio_habitaciones_categoria">
-                <div class="tipo_habitacion_normal"> Millon </div>
-                    <div class="tipo_habitacion_balcon">$87,123</div>
+                <div class="tipo_habitacion_normal"> Premium+ </div>
+                    <div class="tipo_habitacion_balcon"><?php echo "$".$precio3['precio_rcc'] ?></div>
             </div>                           
                 
             </div>
