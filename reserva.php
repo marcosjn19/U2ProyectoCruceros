@@ -51,7 +51,7 @@
     $precio2 = mysqli_fetch_assoc(mysqli_query($conexion, $consultaPrecio2));
     $precio3 = mysqli_fetch_assoc(mysqli_query($conexion, $consultaPrecio3));
 
-    $consultaCabinas = "SELECT C.id_cabina, C.tipo_cabina, CC.disponible_rcc, C.refimagen_cabina, CC.precio_rcc FROM CABINA C, cabina_crucero CC WHERE C.id_cabina = CC.id_cabina AND CC.id_crucero=1;";
+    $consultaCabinas = "SELECT C.id_cabina, C.tipo_cabina, CC.disponible_rcc, C.refimagen_cabina, CC.precio_rcc FROM CABINA C, CABINA_CRUCERO CC WHERE C.id_cabina = CC.id_cabina AND CC.id_crucero='$id_crucero';";
     $resultCabinas = mysqli_query($conexion, $consultaCabinas);
     $cabinas = array();
 
