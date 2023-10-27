@@ -51,6 +51,14 @@
     $precio2 = mysqli_fetch_assoc(mysqli_query($conexion, $consultaPrecio2));
     $precio3 = mysqli_fetch_assoc(mysqli_query($conexion, $consultaPrecio3));
 
+    $consultaCabinas = "SELECT C.id_cabina, C.tipo_cabina, CC.disponible_rcc, C.refimagen_cabina, CC.precio_rcc FROM CABINA C, cabina_crucero CC WHERE C.id_cabina = CC.id_cabina AND CC.id_crucero=1;";
+    $resultCabinas = mysqli_query($conexion, $consultaCabinas);
+    $cabinas = array();
+
+    while ( $filaCabina = mysqli_fetch_assoc($resultCabinas) ){
+        $cabinas[] = $filaCabina;
+    }
+
     if (!$resultCrucero) {
     die("Error en la consulta: " . mysqli_error($conexion));
     } else {
@@ -77,31 +85,12 @@
     <div class = "info-barco">
     <div class = "intinerario">
         <div class="rutas">
-            <ul>
-                <li>Crucero</li>
-                <li>Día en el mar</li>
-                <li>3</li>
-                <li>Tesalónica, Grecia<br>Desde 7:00 AM - 5:00 PM</li>
-                <li>4</li>
-                <li>Quíos, Grecia<br>Licitado de 8:00 AM - 6:00 PM</li>
-                <li>5</li>
-                <li>Bodrum, Turquía<br>Desde 8:00 AM - 8:00 PM</li>
-                <li>6</li>
-                <li>Rhodes, Grecia<br>Desde 8:00 AM - 6:00 PM</li>
-                <li>7</li>
-                <li>Mykonos, Grecia<br>Licitado de 8:00 AM - 8:00 PM</li>
-                <li>8</li>
-                <li>Santorini, Grecia<br>Licitado de 8:00 AM - 8:00 PM</li>
-                <li>9</li>
-                <li>Chania (Souda), Creta<br>Desde 8:00 AM - 5:00 PM</li>
-                <li>10</li>
-                <li>Olympia (Katakolon), Grecia<br>Desde 8:00 AM - 6:00 PM</li>
-            </ul>         
+            <p> <?php echo $fila['itinerario_crucero']?></p>
         </div>                      
         <br>    
     </div>         
     <div class="cuadro-reservacion"> 
-        <div class="precio-principal">1
+        <div class="precio-principal">
         <h3><?php echo "$".$precio1['precio_rcc'] ?> </h3>
         <p class="texto-reserva">
         <?php 
@@ -149,36 +138,29 @@
                     <div class = "contenedor-boletos">
                         <div class = "contenedor-barco">
                             <div class = "Punta"></div>
-                            <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$15000"><p>1</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>2</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>3</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>4</p></div>
-                            <div class = "cabina familiar ocupada"><p>5</p></div>
-    
-                            <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$15000"><p>6</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>7</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>8</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>9</p></div>
-                            <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$15000"><p>10</p></div>
-    
-                            <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$15000"><p>11</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>12</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>13</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>14</p></div>
-                            <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$15000"><p>15</p></div>
-    
-                            <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$15000"><p>16</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>17</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>18</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>19</p></div>
-                            <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$15000"><p>20</p></div>
                             
-                            <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$15000"><p>21</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>22</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>23</p></div>
-                            <div class = "cabina individual disponible" data-img = "/media/imgInd.jpeg" data-capacidad = "1" data-tipo = "Individual" data-precio = $11000><p>24</p></div>
-                            <div class = "cabina familiar disponible" data-img = "/media/imgFam.jpeg" data-capacidad = "4" data-tipo = "Familiar" data-precio = "$15000"><p>25</p></div>
-     
+                            <?php foreach ($cabinas as $cabina){
+                                if ( $cabina['disponible_rcc'] == 1 ){
+                                    $estado = "disponible";
+                                }else{
+                                    $estado = "ocupada";
+                                }
+
+                                if ( $cabina['tipo_cabina'] == "Familiar"){
+                                    $capacidad = 4;
+                                }else{
+                                    $capacidad = 1;
+                                }
+                            
+                            ?>
+
+                            <div class = "cabina <?php echo $cabina['tipo_cabina']; echo " ".$estado; ?>" 
+                            data-img = "<?php echo  $cabina['refimagen_cabina'];?>" data-capacidad = "<?php echo $capacidad; ?>" 
+                            data-tipo = "<?php echo $cabina['tipo_cabina'];?>" data-precio = "<?php echo '$'.$cabina['precio_rcc']; ?>">
+                            <p><?php echo $cabina['id_cabina'];?></p> 
+                            </div>
+                            <?php } ?>
+
                             <div class = "Cola"></div>
                         </div>
                         <div class = "contenedor-info-boletos">
