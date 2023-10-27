@@ -13,6 +13,7 @@
     height: 100%;
     width: 100%;
 }
+
 .encabezado-reserva-italia {
     background-image: url(/media/italia.jpg);
     
@@ -20,6 +21,7 @@
     background-size:   cover;
     height: 100%;
     width: 100%;
+
 }
 
 .encabezado-reserva-españa {
@@ -51,48 +53,40 @@
 
 /*----------- INTINERARIO-------------------------*/
 .intinerario {
-    
-    margin-left: 1rem;
-     
-    display: inline-block;
+    border:#00DDEB;
+    border-style: solid;
     background-color: rgba(27, 27, 28, 0.55);
     text-align: center;
-    position: relative;
-    left: 10%;
+    width: 100%;
+    height: fit-content;
 }
-.intinerario li{
-    color: #FFFFFF;
-    font-size: 2rem;
-    list-style: none;
-    font-family: 'Titillium Web';
+
+.intinerario p {
+    font-size: 2.5rem;
 }
-.intinerario h3{
-    color: #FFFFFF;
-    font-size: 3rem;
-    font-family: 'Titillium Web';
-}
+
 
 /*--------------------RECUADRO DE RESERVACION----------------*/
 .cuadro-reservacion{
     background-color: aliceblue;
     border-radius: 1rem;
-    position: absolute;
-    
-
+    border: #00DDEB;
+    border-style: solid;
+    height:max-content;
+    width: fit-content;
+    margin:auto;
 }
 
 /*------POSICIONES-------*/
 
 .info-barco {
     display: flexbox;
-    height: 100rem;
-}
-
-@media (min-width: 768px){ 
-   .info-barco {
-    display: block;
-    height: auto;
-   }
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    border: #FFFFFF;
+    border-style: solid;
+    background-color: rgba(0,0,0,0);
 }
 
 .cuadro-reservacion {
@@ -100,18 +94,9 @@
     margin-top: 1rem; 
 }
 
-@media (min-width: 768px){ 
-    .cuadro-reservacion {
-        top: 135%; 
-        left: 1%;
-    }
-}
-
 .cuadro-reservacion h3, p{
     color: #000000;
     text-align: left;
-    
-    
 }
 
 .precio-principal{
@@ -119,25 +104,26 @@
 }
 
 .cuadro-reservacion h3{
-    font-size: 4rem;
+    font-size: 5rem;
 }
+
 .texto-reserva{
     color: #000000;
     margin: 1rem;
 }
 
+.cuadro-reservacion .texto-reserva {
+    font-size: 2rem;
+}
 
 .precio_habitaciones{
     display: flex;
     padding: 1rem;
     justify-content: space-between;
     gap: 2rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-
-
+}
 
   /*------------botoncito-------------------------*/
 .boton {
@@ -156,7 +142,7 @@
     min-width: 140px;
     padding: 3px;
     text-decoration: none;
-    
+    margin:auto;
 }
 
 .boton:active,
@@ -181,22 +167,32 @@
     .boton {
     font-size: 24px;
     min-width: 196px;
+    margin-left: 1rem;
     }
 }
 /*------------media querys---------------*/
+@media (min-width: 768px){ 
+    .info-barco {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     height: auto;
+    }
+ }
+
 @media (min-width: 768px){
-    
     .cuadro-reservacion{
-     
         display: inline-block;
         position: relative;
         padding: 2rem; 
-        top: 50%;  
-        left: 40%;   
         margin: 1rem;
-        
+        margin-top: max(10rem, 10%);
     }
-    
-    
-    
+
+    .intinerario {
+        margin-top: max(5rem, 6%);
+        width: max(30rem, 70rem);
+        height: fit-content;
+        margin-left: min(5rem, 10%);
+    }
 }
