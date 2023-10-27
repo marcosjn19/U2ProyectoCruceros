@@ -53,8 +53,6 @@
 
 /*----------- INTINERARIO-------------------------*/
 .intinerario {
-    border:#00DDEB;
-    border-style: solid;
     background-color: rgba(27, 27, 28, 0.55);
     text-align: center;
     width: 100%;
@@ -70,8 +68,6 @@
 .cuadro-reservacion{
     background-color: aliceblue;
     border-radius: 1rem;
-    border: #00DDEB;
-    border-style: solid;
     height:max-content;
     width: fit-content;
     margin:auto;
