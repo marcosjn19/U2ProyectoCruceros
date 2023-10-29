@@ -51,7 +51,7 @@
     $precio2 = mysqli_fetch_assoc(mysqli_query($conexion, $consultaPrecio2));
     $precio3 = mysqli_fetch_assoc(mysqli_query($conexion, $consultaPrecio3));
 
-    $consultaCabinas = "SELECT C.id_cabina, C.tipo_cabina, CC.disponible_rcc, C.refimagen_cabina, CC.precio_rcc FROM CABINA C, CABINA_CRUCERO CC WHERE C.id_cabina = CC.id_cabina AND CC.id_crucero='$id_crucero';";
+    $consultaCabinas = "SELECT C.id_cabina, C.tipo_cabina, CC.disponible_rcc, C.refimagen_cabina, CC.precio_rcc, CC.id_crucero FROM CABINA C, CABINA_CRUCERO CC WHERE C.id_cabina = CC.id_cabina AND CC.id_crucero='$id_crucero';";
     $resultCabinas = mysqli_query($conexion, $consultaCabinas);
     $cabinas = array();
 
@@ -156,7 +156,8 @@
 
                             <div class = "cabina <?php echo $cabina['tipo_cabina']; echo " ".$estado; ?>" 
                             data-img = "<?php echo  $cabina['refimagen_cabina'];?>" data-capacidad = "<?php echo $capacidad; ?>" 
-                            data-tipo = "<?php echo $cabina['tipo_cabina'];?>" data-precio = "<?php echo '$'.$cabina['precio_rcc']; ?>">
+                            data-tipo = "<?php echo $cabina['tipo_cabina'];?>" data-precio = "<?php echo '$'.$cabina['precio_rcc']; ?>"
+                            data-id = "<?php echo $cabina['id_cabina'];?>"     data-crucero = "<?php echo $cabina['id_crucero']; ?>" >
                             <p><?php echo $cabina['id_cabina'];?></p> 
                             </div>
                             <?php } ?>
@@ -167,7 +168,7 @@
                             <h3 id = "tipo-cabina"> Selecciona una cabina</h3>
                             <div id = "imagen-cabina"></div>
                             <p> Capacidad de: <span id = "capacidad-cabina">x personas</span></p>
-                            <button class = "botont2" onclick = "window.location.href='pagos.html'"> RESSERVAR -></button>
+                            <button class = "botont2" onclick = "reservarCabina()"> RESERVAR -></button>
                             <p> Precio por persona de: <span id = "precio-cabina">Selecciona una cabina</span></p>
                         </div>
                     </div>
@@ -185,6 +186,15 @@
     
             btn.onclick = function(){
                 modal.style.display = "block";
+            }
+            
+            function reservarCabina() {
+                var selectedCabina = document.querySelector('.cabina.selected');
+                if (selectedCabina) {
+                    var dataId = selectedCabina.getAttribute('data-id');
+                    var dataCrucero = selectedCabina.getAttribute('data-crucero');
+                    window.location.href = 'pagos.php?idcrucero='+dataCrucero+'&idcabina=' + dataId;
+                }
             }
         </script>
 </body>
