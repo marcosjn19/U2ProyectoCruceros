@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATALOGO</title>
+
+    <title>ATLANTIC CRUSIERS</title>
 
     <link rel = "preload" href = "./css/normalize.css" as = "style">
     <link rel = "stylesheet" href = "./css/normalize.css">
-    <link rel =  "preoload" href = "./css/styles.css" as ="style">
+    <link rel =  "preoload" href = "./css/styles.css" as = "style">
     <link href = "./css/styles.css" rel = "stylesheet">  
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,25 +31,25 @@
 <body>
 
     <?php
-    $dbhost = "localhost";
-    $dbname = "u768297978_atlanticruiser";
-    $dbuser = "u768297978_admin";
-    $dbpass = "Prograweb123#";
+        $dbhost = "localhost";
+        $dbname = "u768297978_atlanticruiser";
+        $dbuser = "u768297978_admin";
+        $dbpass = "Prograweb123#";
 
-    $conexion = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname, "3306") or die
-    ("PROBLEMAS DE CONEXION");
-    $consultaCruceros = "SELECT C.id_crucero, C.descripcion_crucero, C.destino_crucero, C.barco_crucero, CC.precio_rcc, C.refimagen_crucero FROM CRUCERO C, CABINA_CRUCERO CC WHERE C.id_crucero = CC.id_crucero AND CC.id_cabina = 2;";
-    $resultCruceros = mysqli_query($conexion, $consultaCruceros);
-    $cruceros = array();
+        $conexion = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname, "3306") or die
+        ("PROBLEMAS DE CONEXION");
+        $consultaCruceros = "SELECT C.id_crucero, C.descripcion_crucero, C.destino_crucero, C.barco_crucero, CC.precio_rcc, C.refimagen_crucero FROM CRUCERO C, CABINA_CRUCERO CC WHERE C.id_crucero = CC.id_crucero AND CC.id_cabina = 2;";
+        $resultCruceros = mysqli_query($conexion, $consultaCruceros);
+        $cruceros = array();
 
-    while ( $filaCrucero = mysqli_fetch_assoc($resultCruceros) ){
-        $cruceros[] = $filaCrucero;
-    }
+        while ( $filaCrucero = mysqli_fetch_assoc($resultCruceros) ){
+            $cruceros[] = $filaCrucero;
+        }
 
     ?>
 
-    <section class = "encabezado-reservaciones">
-        <div class = "contenido-encabezado-reservaciones"> 
+    <section class = "encabezado">
+        <div class = "contenido-encabezado"> 
             <div class = "nav-bg">
                 <nav class = "nav-contenedor">
                     <a class = "nav-title" href = "index.php">ATLANTIC CRUISER</a>
@@ -56,22 +57,34 @@
                     <a class = "nav-link" href = "quienes_somos.html">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.php">RESERVACIONES</a>
                     <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
-                </nav>
+                    <a class = "nav-link" href = "login-register.html">INGRESAR</a>
+                </nav> 
             </div>    
 
             <div class = "mensaje">
-            <p>RESERVA CON NOSOTROS Y APROVECHA NUESTRAS OFERTAS</p>
+            <p> CRUCEROS POR EL ATLANTICO DESDE</p>
+            <p class = "precio"> $9999</p>
             </div>
         </div>
     </section>
-    
-    
+
+    <hr>
+    <section class = "contenido-experiencias-img">
+        <div class = "contenido-experiencias">
+            <div class = "cuadro imagen"> </div>
+            <h2 class = "cuadro subt">Experiencias inolvidables</h2>
+            <p class = "cuadro descripcion">En nuestros increibles cruceros, te esperan experiencias inolvidables que te transportarán a un mundo de lujo, aventura y relajación. Desde el momento en que pisas la cubierta, te sumergirás en un viaje lleno de maravillas. Desde gastronomía de clase mundial, hasta entretenimiento de primera clase. ¡Ven a vivir la aventura en el mar y descubre todo lo que tenemos para ofrecerte!
+            </p>
+            <button class = "cuadro botont1 vermas" onclick = "window.location.href='experiencias.html'">Ver más</button>
+        </div>
+    </section>
+    <hr>
     <section class = "catalogo"> 
         <h1>Ahorra hasta $12550 con nuestras promociones</h1>
             <div class = "contenedor-promociones">  
-                <?php foreach ($cruceros as $crucero){
+            <?php foreach ($cruceros as $crucero){
 
-                ?>
+            ?>
                 <div class = "promocion">
                     <div class = "promocion-img" style="background-image: url('<?php echo $crucero['refimagen_crucero']; ?>');" ></div>
                             <h3><?php echo $crucero['descripcion_crucero']?></h3>
@@ -91,11 +104,9 @@
                             </div>
                         
                 </div>                    
-                <?php } ?>
+            <?php } ?>
             </div>
     </section>
-    
-
 
     <footer>
         <div class = "footer-main-content">
