@@ -85,7 +85,7 @@
     <div class = "info-barco">
     <div class = "intinerario">
         <div class="rutas">
-            <p> <?php echo $fila['itinerario_crucero']?></p>
+            <p> <?php echo $fila['itinerario_crucero'].'<br>Del: '.$fila['fechainicio_crucero'].'<br>Al: '.$fila['fechacierre_crucero']?></p>
         </div>                      
         <br>    
     </div>         
