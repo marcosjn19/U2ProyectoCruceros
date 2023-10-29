@@ -105,7 +105,7 @@
 
             <div id = "" class = campo>
                 <label> Total a pagar: </label>
-                <input id = "totalPagar" class = "total" type = "text" value = <?php echo $precioCabina ?> readonly = "true">
+                <input id = "totalPagar" class = "total" type = "text" value = <?php echo '$'.$precioCabina ?> readonly = "true">
             </div>
         
         <div class="contenedor">
