@@ -28,6 +28,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<?php
+    $dbhost = "localhost";
+    $dbname = "u768297978_atlanticruiser";
+    $dbuser = "u768297978_admin";
+    $dbpass = "Prograweb123#";
+    
+    $id_crucero = $_GET['idcrucero'];
+    $id_cabina = $_GET['idcabina'];
+
+    $conexion = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname, "3306") or die
+    ("PROBLEMAS DE CONEXION");
+    $consultaCrucero = "SELECT * FROM CRUCERO WHERE id_crucero = '$id_crucero';";
+    $resultCrucero = mysqli_query($conexion, $consultaCrucero);
+
+    $consultaCabinas = "SELECT C.id_cabina, C.tipo_cabina, CC.disponible_rcc, C.refimagen_cabina, CC.precio_rcc FROM CABINA C, CABINA_CRUCERO CC WHERE C.id_cabina = '$id_cabina' AND C.id_cabina = CC.id_cabina AND CC.id_crucero='$id_crucero';";
+    $resultCabinas = mysqli_query($conexion, $consultaCabinas);
+
+    if (!$resultCrucero | !$resultCabinas) {
+    die("Error en la consulta: " . mysqli_error($conexion));
+    } else {
+        $fila = mysqli_fetch_assoc($resultCrucero);
+        $filaCabina = mysqli_fetch_assoc($resultCabinas);
+        mysqli_close($conexion);    
+    }
+
+    if ( $filaCabina['tipo_cabina'] == "Individual"){
+        $capacidad = 1;
+    }else{
+        $capacidad = 4;
+    }
+?>
     <section class = "encabezado">
         <div class = "contenido-encabezado"> 
             <div class = "nav-bg">
@@ -49,10 +81,10 @@
 		<form action="#">
 			<div id="formulario-compra" class="campo">
 				<label for="nombre-crucero">Crucero seleccionado:</label>
-				<input id="nombre-crucero" maxlength="100" value = "Nombre crucero" type = "text" readonly = "true" style = "text-align: center;">
+				<input id="nombre-crucero" maxlength="100" value = <?php echo $fila['destino_crucero']?> type = "text" readonly = "true" style = "text-align: center;">
                 <br>
                 <label for="tipo-cabina">Cabina seleccionada:</label>
-                <input id ="tipo-cabina" maxlength="30" value = "Tipo cabina" type = "text" readonly = "true" style = "text-align: center;">
+                <input id ="tipo-cabina" maxlength="30" value = <?php echo $filaCabina['tipo_cabina']?> type = "text" readonly = "true" style = "text-align: center;">
 			</div>
 
 			<div id="formulario-datos" class="campo">
@@ -66,7 +98,7 @@
             
             <div id="" class="campo">
                 <label>Numero de personas:</label>
-                <input class = "number" type="number" value = "1" min = "1" max = "1" required>
+                <input class = "number" type="number" value = "1" min = "1" max = <?php echo $capacidad?> required>
             </div>
 
             <div id = "" class = campo>
