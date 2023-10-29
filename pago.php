@@ -51,6 +51,7 @@
     } else {
         $fila = mysqli_fetch_assoc($resultCrucero);
         $filaCabina = mysqli_fetch_assoc($resultCabinas);
+        $precioCabina = $filaCabina['precio_rcc'];
         mysqli_close($conexion);    
     }
 
@@ -59,6 +60,7 @@
     }else{
         $capacidad = 4;
     }
+
 ?>
     <section class = "encabezado">
         <div class = "contenido-encabezado"> 
@@ -98,7 +100,7 @@
             
             <div id="" class="campo">
                 <label>Numero de personas:</label>
-                <input class = "number" type="number" value = "1" min = "1" max = <?php echo $capacidad?> required>
+                <input id = "numPersonas" class = "number" type="number" value = "1" min = "1" max = <?php echo $capacidad?> required>
             </div>
 
             <div id = "" class = campo>
@@ -112,5 +114,28 @@
     </form>
     </section>
     </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        // Obtenemos el valor del precio de la cabina (supongamos que ya tienes esta variable PHP en tu script)
+        var precioCabina = <?php echo $precioCabina; ?>;
+
+        // Obtenemos referencias a los elementos de entrada
+        var numPersonasInput = document.getElementById("numPersonas");
+        var totalaPagarInput = document.getElementById("totalPagar");
+
+        // Agregamos un event listener para escuchar los cambios en numPersonasInput
+        numPersonasInput.addEventListener("input", function() {
+            // Obtenemos el valor actual de numPersonas
+            var numPersonas = parseInt(numPersonasInput.value);
+
+            // Realizamos el cálculo del total a pagar
+            var totalaPagar = numPersonas * precioCabina;
+
+            // Actualizamos el valor de totalaPagarInput
+            totalaPagarInput.value = totalaPagar;
+        });
+        });
+    </script>
+
 </main>
 </html>
