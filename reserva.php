@@ -36,7 +36,7 @@
     $dbname = "u768297978_atlanticruiser";
     $dbuser = "u768297978_admin";
     $dbpass = "Prograweb123#";
-    $id_crucero = 1;
+    $id_crucero = $_GET['idcrucero'];
 
     $conexion = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname, "3306") or die
     ("PROBLEMAS DE CONEXION");
