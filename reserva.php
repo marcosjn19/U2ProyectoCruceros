@@ -193,7 +193,7 @@
                 if (selectedCabina) {
                     var dataId = selectedCabina.getAttribute('data-id');
                     var dataCrucero = selectedCabina.getAttribute('data-crucero');
-                    window.location.href = 'pagos.php?idcrucero='+dataCrucero+'&idcabina=' + dataId;
+                    window.location.href = 'pago.php?idcrucero='+dataCrucero+'&idcabina=' + dataId;
                 }
             }
         </script>
