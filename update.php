@@ -30,7 +30,7 @@ $id=$_GET['id_crucero'];
         
         <h2 class="titulo"> Actualizacion de crucero</h2>
         <div class="users-form">
-            <form action="edit_usuarios.php" method="POST">
+            <form action="edit_cruceros.php" method="POST">
                 <input type="hidden" name="id_barco" id="id_barco" value="<?= $row['id_crucero']?>">
                 <p>Nombre del Crucero:</p>
                 <br> <input type="text" id="nombreBarco" name="nombreBarco" placeholder="nombre Barco" value="<?= $row['barco_crucero']?>">
