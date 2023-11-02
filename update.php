@@ -5,13 +5,13 @@ $con = connection();
 
 $id=$_GET['id_crucero'];
 
-    $sql="SELECT * FROM crucero WHERE id_crucero='$id'";
+    $sql="SELECT * FROM CRUCERO WHERE id_crucero='$id'";
     $query=mysqli_query($con, $sql);
     $row=mysqli_fetch_array($query);
     
     //consulta cabinas_cruceros
-    $sql1 = "SELECT * FROM cabina_crucero WHERE id_crucero = 
-    (SELECT id_crucero FROM crucero WHERE id_crucero = '$id')";
+    $sql1 = "SELECT * FROM CABINA_CRUCERO WHERE id_crucero = 
+    (SELECT id_crucero FROM CRUCERO WHERE id_crucero = '$id')";
     $query1 = mysqli_query($con, $sql1); 
     $row1 = mysqli_fetch_array($query1);
 

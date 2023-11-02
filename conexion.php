@@ -1,15 +1,15 @@
 <?php
 
 function connection(){
-    $dbhost ="localhost";//host donde esta la base de datos
-    $dbname ="cruceros";
-    $dbuser ="root";
-    $dbpass ="";
+    
+    $dbhost = "localhost";
+    $dbname = "u768297978_atlanticruiser";
+    $dbuser = "u768297978_admin";
+    $dbpass = "Prograweb123#";
 
-    $conexion = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-    if ($conexion->connect_error) {
-        die("Error en la conexión a la base de datos: " . $conexion->connect_error);
-    }
+        $conexion = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname, "3306") or die
+        ("PROBLEMAS DE CONEXION");
+    
 
     return $conexion;
 

@@ -2,7 +2,7 @@
 include("conexion.php");
 $con = connection();
 
-$sql = "SELECT * FROM crucero";
+$sql = "SELECT * FROM CRUCERO";
 $query = mysqli_query($con, $sql);
 ?>
 

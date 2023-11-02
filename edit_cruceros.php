@@ -13,7 +13,7 @@ $imagenBarco =$_POST['imagenBarco'];
 $destinoBarco =$_POST['destinoBarco'];
 
 //----------------actualizacion de datos del crucero
-$sql = "UPDATE crucero SET destino_crucero = '$destinoBarco',
+$sql = "UPDATE CRUCERO SET destino_crucero = '$destinoBarco',
 fechainicio_crucero = '$fechaInicio',
 fechacierre_crucero = '$fechaSalida',
 barco_crucero = '$nombreBarco', 
@@ -47,7 +47,7 @@ $query = mysqli_query($con, $sql);
             $precio_cabina = $precio_cabina_array[$i];
 
             // Realiza un update en la base de datos utilizando estos valores
-            $sql = "UPDATE cabina_crucero SET disponible_rcc = '$disponible_cabina', 
+            $sql = "UPDATE CABINA_CRUCERO SET disponible_rcc = '$disponible_cabina', 
             precio_rcc = '$precio_cabina' WHERE id_rcc = '$id_rcc' 
             AND id_cabina = '$id_cabina' AND id_crucero = '$id_crucero'";
             $query2 = mysqli_query($con, $sql);

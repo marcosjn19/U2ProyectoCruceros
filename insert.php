@@ -14,7 +14,7 @@ $imagenBarco =$_POST['imagenBarco'];
 $destinoBarco =$_POST['destinoBarco'];
 
     
-    $sql = "INSERT INTO crucero (id_crucero, 
+    $sql = "INSERT INTO CRUCERO (id_crucero, 
     destino_crucero,
     fechainicio_crucero,
     fechacierre_crucero,
