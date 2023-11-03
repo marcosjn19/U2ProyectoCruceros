@@ -13,7 +13,7 @@ if($correo_log == "admin" && $pass_log =="admin"){
     (header("Location: admin.php"));
 }
 
-$validacion= mysqli_query($con, "SELECT * FROM clientes 
+$validacion= mysqli_query($con, "SELECT * FROM CLIENTES 
 where correo_cliente = '$correo_log' AND contraseña_cliente = '$pass_log'");
 
 if(mysqli_num_rows($validacion)>0){
