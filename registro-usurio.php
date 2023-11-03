@@ -8,7 +8,7 @@ $email = $_POST['Correo_Electronico'];
 $telefono = $_POST['telefono'];
 $contraseña = $_POST['Contraseña'];
 
-$query = "INSERT INTO clientes (nombre_cliente, apellido_cliente, correo_cliente, telefono_cliente, contraseña_cliente) 
+$query = "INSERT INTO CLIENTES (nombre_cliente, apellido_cliente, correo_cliente, telefono_cliente, contraseña_cliente) 
 VALUES ('$nombre','$apellido', '$email', '$telefono', '$contraseña')";
 
 $ejecutar = mysqli_query($con, $query);
