@@ -64,9 +64,7 @@ session_start();
                     <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
                  
     <?php
-    
-    
-   
+//------------------------------------------------------------
     // Verifica si el usuario está autenticado para mostrar el
     // enlace de cierre de sesión.
     if (isset ( $_SESSION[ "clientes" ] ) ) {
