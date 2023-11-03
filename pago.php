@@ -89,13 +89,14 @@ session_start();
       //-----------------------------------------------
      // Consulta SQL para obtener los datos del cliente.
      $consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM clientes
-      WHERE correo_cliente = '$id_usuario' ";
+      WHERE correo_cliente = '$id_usuario';";
      $resultado = mysqli_query($conexion, $consulta);
      
      if ($resultado) {
          $datos_usuario = mysqli_fetch_assoc($resultado);
      } else {
          die("Error en la consulta: " . mysqli_error($conexion));
+         echo '<a class = "nav-usuario"> Error en la sesion </a>';
      }
       $nombre = $datos_usuario['nombre_cliente'];
       $apellido =  $datos_usuario['apellido_cliente'];
