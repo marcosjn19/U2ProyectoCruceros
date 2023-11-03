@@ -60,19 +60,21 @@
         <!--Formulario de Login y registro-->
         <div class="contenedor__login-registro">
             <!--Login-->
-            <form action="" class="formulario-login">
+            <form action="login-usuario.php" method="post" class="formulario-login">
                 <h2>Iniciar Sesión</h2>
-                <input type="text" placeholder="Correo Electronico">
-                <input type="password" placeholder="Contraseña">
+                <input type="text" placeholder="Correo Electronico" name ="correo_log">
+                <input type="password" placeholder="Contraseña" name = "pass_log">
                 <button>Entrar</button>
             </form>
 
             <!--Registro-->
-            <form action="" class="formulario-registro">
+            <form action="registro-usurio.php" method="post" class="formulario-registro">
                 <h2>Regístrarse</h2>
-                <input type="text" placeholder="Nombre completo">
-                <input type="text" placeholder="Correo Electronico">
-                <input type="password" placeholder="Contraseña">
+                <input type="text" placeholder="Nombre completo" name="Nombre">
+                <input type="text" placeholder="Apellido" name="Apellido">
+                <input type="text" placeholder="Correo Electronico" name="Correo_Electronico">
+                <input type="text" placeholder="telefono" name="telefono">
+                <input type="password" placeholder="Contraseña" name="Contraseña">
                 <button>Regístrarse</button>
             </form>
         </div>
