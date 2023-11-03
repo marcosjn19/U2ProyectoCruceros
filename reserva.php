@@ -79,6 +79,18 @@
                     <a class = "nav-link" href = "quienes_somos.html">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.php">RESERVACIONES</a>
                     <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
+                    <?php
+    session_start();
+
+    // Verifica si el usuario está autenticado para mostrar el
+    // enlace de cierre de sesión.
+    if (isset($_SESSION["clientes"]) ) {
+        echo '<a class="nav-link" href="cerrar_sesion.php">CERRAR SESIÓN</a>';
+    } else {
+        
+        echo '<a class="nav-link" href="login-register.html">INGRESAR</a>';
+    }
+    ?>
                 </nav>
             </div>                
         </div>

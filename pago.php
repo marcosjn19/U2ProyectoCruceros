@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -61,6 +67,7 @@
         $capacidad = 4;
     }
 
+  
 ?>
     <section class = "encabezado">
         <div class = "contenido-encabezado"> 
@@ -71,7 +78,39 @@
                     <a class = "nav-link" href = "quienes_somos.html">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.html">RESERVACIONES</a>
                     <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
-                </nav>
+                    <?php
+  
+  // Verifica si el usuario está autenticado para mostrar el
+  // enlace de cierre de sesión.
+  if (isset($_SESSION["clientes"]) ) {
+      $id_usuario = $_SESSION['clientes'];
+      include ('conexion.php');
+      $conexion = connection();
+      //-----------------------------------------------
+     // Consulta SQL para obtener los datos del cliente.
+     $consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM clientes
+      WHERE correo_cliente = '$id_usuario' ";
+     $resultado = mysqli_query($conexion, $consulta);
+     
+     if ($resultado) {
+         $datos_usuario = mysqli_fetch_assoc($resultado);
+     } else {
+         die("Error en la consulta: " . mysqli_error($conexion));
+     }
+      $nombre = $datos_usuario['nombre_cliente'];
+      $apellido =  $datos_usuario['apellido_cliente'];
+      echo '<a class="nav-usuario">' . $nombre . ' ' . $apellido.'</a>';
+      echo '<a class="nav-link" href="cerrar_sesion.php">CERRAR SESIÓN</a>';
+     
+  
+      
+  } else {
+      
+      echo '<a class="nav-link" href="login-register.html">INGRESAR</a>';
+  }
+  ?>
+              </nav> 
+       
             </div>    
         </div>
 
@@ -89,14 +128,50 @@
                 <input id ="tipo-cabina" maxlength="30" value = <?php echo $filaCabina['tipo_cabina']?> type = "text" readonly = "true" style = "text-align: center;">
 			</div>
 
-			<div id="formulario-datos" class="campo">
-				<label for="nombre-cliente">Datos del cliente:</label>
-				<div id="valores">
-                <input id="nombre-cliente" placeholder = "Nombre" type = "text" required>
-                <input id="apellido-cliente" placeholder = "Apellido" type = "text" required>
-                <input id ="correo-cliente"placeholder = "Correo" type = "text" required>
-                </div>
-            </div>
+            <?php
+//---------------------------------------------------
+
+
+//------si la hay los input toman los valores del usario si no hay pues nel
+if(isset($_SESSION['clientes'])){
+    //-------revision de si hay una sesion 
+    $id_usuario = $_SESSION['clientes'];
+     $conexion = connection();
+    //--------Consulta SQL para obtener los datos del usuario.
+$consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM clientes
+ WHERE correo_cliente = '$id_usuario' ";
+$resultado = mysqli_query($conexion, $consulta);
+
+if ($resultado) {
+    $datos_usuario = mysqli_fetch_assoc($resultado);
+} else {
+    die("Error en la consulta: " . mysqli_error($conexion));
+}
+   echo '<div id="formulario-datos" class="campo">';
+   echo '<label for="nombre-cliente">Datos del cliente:</label>';
+   echo '<div id="valores">';
+   echo '<input id="nombre-cliente" placeholder = "Nombre" type = "text" value="'. $datos_usuario['nombre_cliente'] .'" required>';
+   echo '<input id="apellido-cliente" placeholder = "Apellido" type = "text" value="'. $datos_usuario['apellido_cliente'].'" required>';
+   echo '<input id ="correo-cliente"placeholder = "Correo" type = "text"  value="'.$datos_usuario['correo_cliente'].'"required>';
+   echo '</div>';
+   echo '</div>';
+            
+
+}
+else{
+    echo '<div id="formulario-datos" class="campo">';
+    echo '<label for="nombre-cliente">Datos del cliente:</label>';
+    echo '<div id="valores">';
+    echo '<input id="nombre-cliente" placeholder = "Nombre" type = "text" required>';
+    echo '<input id="apellido-cliente" placeholder = "Apellido" type = "text" required>';
+    echo '<input id ="correo-cliente"placeholder = "Correo" type = "text" required>';
+    echo '</div>';
+    echo '</div>';
+
+}
+
+
+?>
             
             <div id="" class="campo">
                 <label>Numero de personas:</label>
