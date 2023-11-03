@@ -82,20 +82,21 @@ session_start();
   
   // Verifica si el usuario está autenticado para mostrar el
   // enlace de cierre de sesión.
-  if (isset($_SESSION["clientes"]) ) {
+  if (isset($_SESSION['clientes']) ) {
       $id_usuario = $_SESSION['clientes'];
       include ('conexion.php');
       $conexion = connection();
       //-----------------------------------------------
      // Consulta SQL para obtener los datos del cliente.
      $consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM clientes
-      WHERE correo_cliente = '$id_usuario' ";
+      WHERE correo_cliente = '$id_usuario';";
      $resultado = mysqli_query($conexion, $consulta);
      
      if ($resultado) {
          $datos_usuario = mysqli_fetch_assoc($resultado);
      } else {
          die("Error en la consulta: " . mysqli_error($conexion));
+         echo '<a class = "nav-usuario"> Error en la sesion </a>';
      }
       $nombre = $datos_usuario['nombre_cliente'];
       $apellido =  $datos_usuario['apellido_cliente'];
@@ -138,20 +139,21 @@ if(isset($_SESSION['clientes'])){
     $id_usuario = $_SESSION['clientes'];
      $conexion = connection();
     //--------Consulta SQL para obtener los datos del usuario.
-$consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM clientes
- WHERE correo_cliente = '$id_usuario' ";
+$consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM CLIENTES
+ WHERE correo_cliente = '$id_usuario';";
 $resultado = mysqli_query($conexion, $consulta);
 
 if ($resultado) {
     $datos_usuario = mysqli_fetch_assoc($resultado);
 } else {
     die("Error en la consulta: " . mysqli_error($conexion));
+    echo "<h1> Error en la consulta </h1>";
 }
    echo '<div id="formulario-datos" class="campo">';
    echo '<label for="nombre-cliente">Datos del cliente:</label>';
    echo '<div id="valores">';
-   echo '<input id="nombre-cliente" placeholder = "Nombre" type = "text" value="'. $datos_usuario['nombre_cliente'] .'" required>';
-   echo '<input id="apellido-cliente" placeholder = "Apellido" type = "text" value="'. $datos_usuario['apellido_cliente'].'" required>';
+   echo '<input id="nombre-cliente" placeholder = "Nombre" type = "text" value="'.$datos_usuario['nombre_cliente'].'" required>';
+   echo '<input id="apellido-cliente" placeholder = "Apellido" type = "text" value="'.$datos_usuario['apellido_cliente'].'" required>';
    echo '<input id ="correo-cliente"placeholder = "Correo" type = "text"  value="'.$datos_usuario['correo_cliente'].'"required>';
    echo '</div>';
    echo '</div>';
