@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -59,7 +64,7 @@
                     <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
                     <a class = "nav-link" href = "login-register.html">INGRESAR</a>
     <?php
-    session_start();
+    
     
    
     // Verifica si el usuario está autenticado para mostrar el
@@ -76,14 +81,15 @@
        
        if ($resultado) {
            $datos_usuario = mysqli_fetch_assoc($resultado);
+           $nombre = $datos_usuario['nombre_cliente'];
+           $apellido =  $datos_usuario['apellido_cliente'];
+           echo '<a class="nav-usuario">' . $nombre . ' ' . $apellido.'</a>';
+           echo '<a class="nav-link" href="cerrar_sesion.php">CERRAR SESIÓN</a>';
        } else {
            die("Error en la consulta: " . mysqli_error($conexion));
        }
-        $nombre = $datos_usuario['nombre_cliente'];
-        $apellido =  $datos_usuario['apellido_cliente'];
-        echo '<a class="nav-usuario">' . $nombre . ' ' . $apellido.'</a>';
-        echo '<a class="nav-link" href="cerrar_sesion.php">CERRAR SESIÓN</a>';
-        echo '<span class="nav-usuario">' . $datos_usuario['nombre_cliente'] . '</span>';
+
+        
     
         
     } else {
