@@ -82,7 +82,7 @@ session_start();
   
   // Verifica si el usuario está autenticado para mostrar el
   // enlace de cierre de sesión.
-  if (isset($_SESSION['clientes']) ) {
+  if (isset($_SESSION["clientes"]) ) {
       $id_usuario = $_SESSION['clientes'];
       include ('conexion.php');
       $conexion = connection();
