@@ -195,7 +195,7 @@ else{
     <p id="result-message"></p>
     <!-- Replace the "test" client-id value with your client-id -->
 
-    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=Ab8EPHs9jgtRLTYCi2FKfjlYKj_OBdFNLstHk-kD8iSbXkGQq2C0vS6V3SptPhcTzItKTRCumTX71A9f&currency=USD" data-sdk-integration-source="button-factory"></script>
     <script src="app.js"></script>
         </div>
     </form>
