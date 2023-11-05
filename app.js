@@ -12,7 +12,7 @@ window.paypal
         // Full available details
         console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
 
-actions.redirect('LA URL DE TU PAGINA DE GRACIAS');
+actions.redirect('https://atlanticruiser.website/index.php');
         
       });
     },

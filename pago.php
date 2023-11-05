@@ -189,15 +189,18 @@ else{
                 <input id = "totalPagar" class = "total" type = "text" value = <?php echo '$'.$precioCabina ?> readonly = "true">
             </div>
         
-        <div class="contenedor">
-        
-        <div id="paypal-button-container"></div>
-    <p id="result-message"></p>
-    <!-- Replace the "test" client-id value with your client-id -->
+            <div class="contenedor">
+   
+   <div id="paypal-button-container"></div>
+<p id="result-message"></p>
+<!-- Replace the "test" client-id value with your client-id -->
 
-    <script src="https://www.paypal.com/sdk/js?client-id=Ab8EPHs9jgtRLTYCi2FKfjlYKj_OBdFNLstHk-kD8iSbXkGQq2C0vS6V3SptPhcTzItKTRCumTX71A9f&currency=USD" data-sdk-integration-source="button-factory"></script>
-    <script src="app.js"></script>
-        </div>
+<script src="https://www.paypal.com/sdk/js?client-id=Ab8EPHs9jgtRLTYCi2FKfjlYKj_OBdFNLstHk-kD8iSbXkGQq2C0vS6V3SptPhcTzItKTRCumTX71A9f&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script src="app.js"></script>
+   </div>
+
+
+</div>
     </form>
     </section>
     </body>
