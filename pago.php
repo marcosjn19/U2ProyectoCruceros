@@ -122,15 +122,18 @@ session_start();
     <main id="main">
     <section id="derecha">
     <h1>PAGO</h1>
-		<form action="#">
+		<form id="paypal-form" action="recibo.php" method="post">
 			<div id="formulario-compra" class="campo">
+                <input type="hidden" name="idcabina" value="<?=  $id_cabina ?>">
+                <input type="hidden" name="idcrucero" value="<?= $id_crucero ?>">
 				<label for="nombre-crucero">Crucero seleccionado:</label>
-				<input id="nombre-crucero" maxlength="100" value = <?php echo $fila['destino_crucero']?> type = "text" readonly = "true" style = "text-align: center;">
+				
+                <input id="nombre-crucero" name="nombre-crucero" maxlength="100" value="<?= $fila['destino_crucero'] ?>" type="text" readonly="true" style="text-align: center;">
                 <br>
-                <label for="tipo-cabina">Cabina seleccionada:</label>
-                <input id ="tipo-cabina" maxlength="30" value = <?php echo $filaCabina['tipo_cabina']?> type = "text" readonly = "true" style = "text-align: center;">
-			</div>
 
+                <label for="tipo-cabina">Cabina seleccionada:</label>
+                <input id ="tipo-cabina" name="tipo-cabina" maxlength="30" value = <?= $filaCabina['tipo_cabina']?> type = "text" readonly = "true" style = "text-align: center;">
+			</div>
             <?php
 //---------------------------------------------------
 
@@ -141,26 +144,24 @@ if(isset($_SESSION['clientes'])){
     $id_usuario = $_SESSION['clientes'];
      $conexion = connection();
     //--------Consulta SQL para obtener los datos del usuario.
-$consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM CLIENTES
- WHERE correo_cliente = '$id_usuario';";
+$consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM clientes
+ WHERE correo_cliente = '$id_usuario' ";
 $resultado = mysqli_query($conexion, $consulta);
 
 if ($resultado) {
     $datos_usuario = mysqli_fetch_assoc($resultado);
     echo '<div id="formulario-datos" class="campo">';
-    echo '<label for="nombre-cliente">Datos del cliente:</label>';
-    echo '<div id="valores">';
-    echo '<input id="nombre-cliente" placeholder = "Nombre" type = "text" value="'.$datos_usuario['nombre_cliente'].'" required>';
-    echo '<input id="apellido-cliente" placeholder = "Apellido" type = "text" value="'.$datos_usuario['apellido_cliente'].'" required>';
-    echo '<input id ="correo-cliente"placeholder = "Correo" type = "text"  value="'.$datos_usuario['correo_cliente'].'"required>';
-    echo '</div>';
-    echo '</div>';
-             
+   echo '<label for="nombre-cliente">Datos del cliente:</label>';
+   echo '<div id="valores">';
+   echo '<input id="nombre-cliente" name ="nombre-cliente" placeholder = "Nombre" type = "text" value="'. $datos_usuario['nombre_cliente'] .'" required>';
+   echo '<input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" value="'. $datos_usuario['apellido_cliente'].'" required>';
+   echo '<input id ="correo-cliente"  name="correo-cliente" placeholder = "Correo" type = "text"  value="'.$datos_usuario['correo_cliente'].'"required>';
+   echo '</div>';
+   echo '</div>';
 } else {
     die("Error en la consulta: " . mysqli_error($conexion));
-  
 }
-  
+   
             
 
 }
@@ -168,9 +169,9 @@ else{
     echo '<div id="formulario-datos" class="campo">';
     echo '<label for="nombre-cliente">Datos del cliente:</label>';
     echo '<div id="valores">';
-    echo '<input id="nombre-cliente" placeholder = "Nombre" type = "text" required>';
-    echo '<input id="apellido-cliente" placeholder = "Apellido" type = "text" required>';
-    echo '<input id ="correo-cliente"placeholder = "Correo" type = "text" required>';
+    echo '<input id="nombre-cliente" name ="nombre-cliente" placeholder = "Nombre" type = "text" required>';
+    echo '<input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" required>';
+    echo '<input id ="correo-cliente"  name ="correo-cliente" placeholder = "Correo" type = "text" required>';
     echo '</div>';
     echo '</div>';
 
@@ -178,89 +179,92 @@ else{
 
 
 ?>
-            
+			
             <div id="" class="campo">
                 <label>Numero de personas:</label>
-                <input id = "numPersonas" class = "number" type="number" value = "1" min = "1" max = <?php echo $capacidad?> required>
+                <input id = "numPersonas" name="numPersonas" class = "number" type="number" value = "0" min = "0" max = <?php echo $capacidad?> required>
             </div>
 
             <div id = "" class = campo>
                 <label> Total a pagar: </label>
-                <input id = "totalPagar" class = "total" type = "text" value = <?php echo '$'.$precioCabina ?> readonly = "true">
+                <input id = "totalPagar" name="totalPagar"  class = "total" type = "text" value = <?php echo '$'.$precioCabina ?> readonly = "true">
             </div>
         
-            <div class="contenedor">
-            <div id="smart-button-container">
-      <div style="text-align: center;">
-        <div id="paypal-button-container"></div>
-      </div>
+            <script>
+  var totalaPagar = 0; // Declaramos totalaPagar en el ámbito global y le asignamos un valor inicial
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Obtenemos el valor del precio de la cabina (supongamos que ya tienes esta variable PHP en tu script)
+    var precioCabina = <?php echo $precioCabina; ?>;
+
+    // Obtenemos referencias a los elementos de entrada
+    var numPersonasInput = document.getElementById("numPersonas");
+    var totalaPagarInput = document.getElementById("totalPagar");
+
+    // Agregamos un event listener para escuchar los cambios en numPersonasInput
+    numPersonasInput.addEventListener("input", function() {
+      // Obtenemos el valor actual de numPersonas
+      var numPersonas = parseInt(numPersonasInput.value);
+
+      // Realizamos el cálculo del total a pagar
+     totalaPagar = numPersonas * precioCabina;
+
+      // Actualizamos el valor de totalaPagarInput
+      totalaPagarInput.value = '$' + totalaPagar;
+     
+    });
+   
+  
+   
+  });
+  
+  
+  window.totalaPagar = totalaPagar;
+  
+
+</script>
+
+<div class="contenedor">
+  <div id="smart-button-container">
+    <div style="text-align: center;">
+      <div id="paypal-button-container"></div>
     </div>
-  <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD" data-sdk-integration-source="button-factory"></script>
-  <script>
-    function initPayPalButton() {
-      paypal.Buttons({
-        style: {
-          shape: 'rect',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'pay',
-          
-        },
-
-        createOrder: function(data, actions) {
-          return actions.order.create({
-            purchase_units: [{"description":"LA DESCRIPCION DE TU PRODUCTO","amount":{"currency_code":"USD","value":13}}]
-          });
-        },
-
-        onApprove: function(data, actions) {
-          return actions.order.capture().then(function(orderData) {
-            
-            // Full available details
-            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
- 
-actions.redirect('LA URL DE TU PAGINA DE GRACIAS');
-            
-          });
-        },
-
-        onError: function(err) {
-          console.log(err);
-        }
-      }).render('#paypal-button-container');
-    }
-    initPayPalButton();
-  </script>
-
-   </div>
-
-
+  </div>
 </div>
+
+<script>
+   var ola= window.totalaPagar;
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [
+          {
+            amount: {
+              value: window.totalaPagar   // Utilizamos la variable global totalaPagar
+            }
+          }
+        ]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(orderData) {
+        alert('Transacción exitosa.');
+        document.getElementById('paypal-form').submit();
+       
+      });
+    }
+  }).render('#paypal-button-container');
+</script>
+
+  
     </form>
     </section>
+
+    
     </body>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        // Obtenemos el valor del precio de la cabina (supongamos que ya tienes esta variable PHP en tu script)
-        var precioCabina = <?php echo $precioCabina; ?>;
 
-        // Obtenemos referencias a los elementos de entrada
-        var numPersonasInput = document.getElementById("numPersonas");
-        var totalaPagarInput = document.getElementById("totalPagar");
 
-        // Agregamos un event listener para escuchar los cambios en numPersonasInput
-        numPersonasInput.addEventListener("input", function() {
-            // Obtenemos el valor actual de numPersonas
-            var numPersonas = parseInt(numPersonasInput.value);
 
-            // Realizamos el cálculo del total a pagar
-            var totalaPagar = numPersonas * precioCabina;
-
-            // Actualizamos el valor de totalaPagarInput
-            totalaPagarInput.value = '$'+totalaPagar;
-        });
-        });
-    </script>
 
 </main>
 </html>
