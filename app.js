@@ -23,3 +23,6 @@ actions.redirect('https://atlanticruiser.website/index.php');
   }).render('#paypal-button-container');
 
 initPayPalButton();
+
+
+
