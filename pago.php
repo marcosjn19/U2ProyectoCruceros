@@ -134,10 +134,10 @@ session_start();
                 <label for="tipo-cabina">Cabina seleccionada:</label>
                 <input id ="tipo-cabina" name="tipo-cabina" maxlength="30" value = <?= $filaCabina['tipo_cabina']?> type = "text" readonly = "true" style = "text-align: center;">
 			</div>
-            <?php
+          
 //---------------------------------------------------
 
-
+<?php
 //------si la hay los input toman los valores del usario si no hay pues nel
 if(isset($_SESSION['clientes'])){
     //-------revision de si hay una sesion 
@@ -179,90 +179,7 @@ else{
 
 
 ?>
-			
-            <div id="" class="campo">
-                <label>Numero de personas:</label>
-                <input id = "numPersonas" name="numPersonas" class = "number" type="number" value = "0" min = "0" max = <?php echo $capacidad?> required>
-            </div>
-
-            <div id = "" class = campo>
-                <label> Total a pagar: </label>
-                <input id = "totalPagar" name="totalPagar"  class = "total" type = "text" value = <?php echo '$'.$precioCabina ?> readonly = "true">
-            </div>
-        
-            <script>
-  var totalaPagar = 0; // Declaramos totalaPagar en el ámbito global y le asignamos un valor inicial
-
-  document.addEventListener("DOMContentLoaded", function() {
-    // Obtenemos el valor del precio de la cabina (supongamos que ya tienes esta variable PHP en tu script)
-    var precioCabina = <?php echo $precioCabina; ?>;
-
-    // Obtenemos referencias a los elementos de entrada
-    var numPersonasInput = document.getElementById("numPersonas");
-    var totalaPagarInput = document.getElementById("totalPagar");
-
-    // Agregamos un event listener para escuchar los cambios en numPersonasInput
-    numPersonasInput.addEventListener("input", function() {
-      // Obtenemos el valor actual de numPersonas
-      var numPersonas = parseInt(numPersonasInput.value);
-
-      // Realizamos el cálculo del total a pagar
-     totalaPagar = numPersonas * precioCabina;
-
-      // Actualizamos el valor de totalaPagarInput
-      totalaPagarInput.value = '$' + totalaPagar;
-     
-    });
-   
-  
-   
-  });
-  
-  
-  window.totalaPagar = totalaPagar;
-  
-
-</script>
-
-<div class="contenedor">
-  <div id="smart-button-container">
-    <div style="text-align: center;">
-      <div id="paypal-button-container"></div>
-    </div>
-  </div>
-</div>
-
-<script>
-   var ola= window.totalaPagar;
-  paypal.Buttons({
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [
-          {
-            amount: {
-              value: window.totalaPagar   // Utilizamos la variable global totalaPagar
-            }
-          }
-        ]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(orderData) {
-        alert('Transacción exitosa.');
-        document.getElementById('paypal-form').submit();
-       
-      });
-    }
-  }).render('#paypal-button-container');
-</script>
-
-  
-    </form>
-    </section>
-
-    
-    </body>
-
+		
 
 
 
