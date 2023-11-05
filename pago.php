@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAGOS</title>
     <title>ATLANTIC CRUSIERS</title>
-
+    <script src="https://www.paypal.com/sdk/js?client-id=Ab8EPHs9jgtRLTYCi2FKfjlYKj_OBdFNLstHk-kD8iSbXkGQq2C0vS6V3SptPhcTzItKTRCumTX71A9f&currency=USD" data-sdk-integration-source="button-factory"></script>
     <link rel = "preload" href = "./css/normalize.css" as = "style">
     <link rel = "stylesheet" href = "./css/normalize.css">
     <link rel =  "preload" href = "./css/styles.css" as = "style">
