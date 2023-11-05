@@ -135,7 +135,7 @@ session_start();
                 <input id ="tipo-cabina" name="tipo-cabina" maxlength="30" value = <?= $filaCabina['tipo_cabina']?> type = "text" readonly = "true" style = "text-align: center;">
 			</div>
           
-//---------------------------------------------------
+
 
 <?php
 //------si la hay los input toman los valores del usario si no hay pues nel
