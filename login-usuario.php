@@ -23,11 +23,12 @@ if(mysqli_num_rows($validacion)>0){
 
 }else{
 
+    
     echo '<script>
     alert("usuario no encotrado vuelve a intentar");
-    window.location = "login-register.html":
-    </script>';
-    exit;
+    window.location = "login-register.html";
+</script>';
+   
 }
 
 
