@@ -42,7 +42,7 @@
                     <a class = "nav-link" href = "quienes_somos.php">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.php">RESERVACIONES</a>
                     <a class = "nav-link" href = "contactanos.php">CONTACTANOS</a>
-                    <a class = "nav-link" href = "login-register.html">INGRESAR</a>
+                    
                     <?php
   
   // Verifica si el usuario está autenticado para mostrar el
