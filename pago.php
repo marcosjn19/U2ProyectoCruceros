@@ -250,6 +250,7 @@ else{
       return actions.order.capture().then(function(orderData) {
         alert('Transacción exitosa.');
         document.getElementById('paypal-form').submit();
+        window.location = 'recibo.php';
        
       });
     }
