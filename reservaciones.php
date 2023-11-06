@@ -87,7 +87,6 @@
       echo '<a class="nav-link" href="login-register.html">INGRESAR</a>';
   }
   ?>
-              </nav> 
                
                 </nav>
             </div>    
