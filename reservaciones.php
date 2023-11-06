@@ -72,7 +72,7 @@ session_start();
       $conexion = connection();
       //-----------------------------------------------
      // Consulta SQL para obtener los datos del cliente.
-     $consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM clientes
+     $consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM CLIENTES
       WHERE correo_cliente = '$id_usuario' ";
      $resultado = mysqli_query($conexion, $consulta);
      
@@ -93,8 +93,7 @@ session_start();
       echo '<a class="nav-link" href="login-register.html">INGRESAR</a>';
   }
   ?>
-               
-                </nav>
+              </nav> 
             </div>    
 
             <div class = "mensaje">
