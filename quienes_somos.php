@@ -44,7 +44,7 @@
                     <a class = "nav-link" href = "experiencias.php">EXPERIENCIAS</a>
                     <a class = "nav-link" href = "#">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.php">RESERVACIONES</a>
-                    <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
+                    <a class = "nav-link" href = "contactanos.php">CONTACTANOS</a>
                     <?php
   
   // Verifica si el usuario está autenticado para mostrar el

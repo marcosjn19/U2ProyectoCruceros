@@ -61,7 +61,7 @@ session_start();
                     <a class = "nav-link" href = "experiencias.php">EXPERIENCIAS</a>
                     <a class = "nav-link" href = "quienes_somos.php">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.php">RESERVACIONES</a>
-                    <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
+                    <a class = "nav-link" href = "contactanos.php">CONTACTANOS</a>
                  
     <?php
 //------------------------------------------------------------

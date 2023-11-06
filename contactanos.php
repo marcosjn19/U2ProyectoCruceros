@@ -38,12 +38,43 @@
             <div class = "nav-bg">
                 <nav class = "nav-contenedor">
                     <a class = "nav-title" href = "index.php">ATLANTIC CRUISER</a>
-                    <a class = "nav-link" href = "experiencias.html">EXPERIENCIAS</a>
-                    <a class = "nav-link" href = "quienes_somos.html">¿QUIENES SOMOS?</a>
+                    <a class = "nav-link" href = "experiencias.php">EXPERIENCIAS</a>
+                    <a class = "nav-link" href = "quienes_somos.php">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.php">RESERVACIONES</a>
-                    <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
+                    <a class = "nav-link" href = "contactanos.php">CONTACTANOS</a>
                     <a class = "nav-link" href = "login-register.html">INGRESAR</a>
-                </nav>
+                    <?php
+  
+  // Verifica si el usuario está autenticado para mostrar el
+  // enlace de cierre de sesión.
+  if (isset($_SESSION['clientes']) ) {
+      $id_usuario = $_SESSION['clientes'];
+      include ('conexion.php');
+      $conexion = connection();
+      //-----------------------------------------------
+     // Consulta SQL para obtener los datos del cliente.
+     $consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM CLIENTES
+      WHERE correo_cliente = '$id_usuario' ";
+     $resultado = mysqli_query($conexion, $consulta);
+     
+     if ($resultado) {
+         $datos_usuario = mysqli_fetch_assoc($resultado);
+         $nombre = $datos_usuario['nombre_cliente'];
+        $apellido =  $datos_usuario['apellido_cliente'];
+        echo '<a class="nav-usuario">' . $nombre . ' ' . $apellido.'</a>';
+        echo '<a class="nav-link" href="cerrar_sesion.php">CERRAR SESIÓN</a>';
+     } else {
+         die("Error en la consulta: " . mysqli_error($conexion));
+     }
+      
+     
+  
+      
+  } else {
+      
+      echo '<a class="nav-link" href="login-register.html">INGRESAR</a>';
+  }
+  ?>
             </div>                
         </div>
     </section>
