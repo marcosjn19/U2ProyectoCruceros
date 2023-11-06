@@ -75,8 +75,8 @@
             <div class = "nav-bg">
                 <nav class = "nav-contenedor">
                     <a class = "nav-title" href="index.php">ATLANTIC CRUISER</a>
-                    <a class = "nav-link" href = "experiencias.html">EXPERIENCIAS</a>
-                    <a class = "nav-link" href = "quienes_somos.html">¿QUIENES SOMOS?</a>
+                    <a class = "nav-link" href = "experiencias.php">EXPERIENCIAS</a>
+                    <a class = "nav-link" href = "quienes_somos.php">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.php">RESERVACIONES</a>
                     <a class = "nav-link" href = "contactanos.html">CONTACTANOS</a>
                     <?php
