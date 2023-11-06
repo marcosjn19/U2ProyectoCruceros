@@ -74,7 +74,7 @@
       
       echo '<a class="nav-link" href="login-register.html">INGRESAR</a>';
   }
-  ?>
+  ?> 
             </div>                
         </div>
     </section>

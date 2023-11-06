@@ -38,7 +38,8 @@
                     <a class = "nav-link" href = "quienes_somos.php">¿QUIENES SOMOS?</a>
                     <a class = "nav-link" href = "reservaciones.php">RESERVACIONES</a>
                     <a class = "nav-link" href = "contactanos.php">CONTACTANOS</a>
-                    <?php
+                 
+                 <?php
   
   // Verifica si el usuario está autenticado para mostrar el
   // enlace de cierre de sesión.
