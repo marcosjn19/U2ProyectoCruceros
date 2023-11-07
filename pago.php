@@ -161,21 +161,22 @@ if ($resultado) {
 } else {
     die("Error en la consulta: " . mysqli_error($conexion));
 }
+ 
+
+}
+echo '<div id="formulario-datos" class="campo">';
+echo '<label for="nombre-cliente">Datos del cliente:</label>';
+echo '<div id="valores">';
+echo '<input id="nombre-cliente" name ="nombre-cliente" placeholder = "Nombre" type = "text" required>';
+echo '<input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" required>';
+echo '<input id ="correo-cliente"  name ="correo-cliente" placeholder = "Correo" type = "text" required>';
+echo '</div>';
+echo '</div>';
    
             
 
-}
-else{
-    echo '<div id="formulario-datos" class="campo">';
-    echo '<label for="nombre-cliente">Datos del cliente:</label>';
-    echo '<div id="valores">';
-    echo '<input id="nombre-cliente" name ="nombre-cliente" placeholder = "Nombre" type = "text" required>';
-    echo '<input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" required>';
-    echo '<input id ="correo-cliente"  name ="correo-cliente" placeholder = "Correo" type = "text" required>';
-    echo '</div>';
-    echo '</div>';
 
-}
+
 
 
 ?>
