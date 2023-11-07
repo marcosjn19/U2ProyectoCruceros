@@ -20,6 +20,8 @@ $fechaActual = date('Y-m-d'); // Obtiene la fecha y hora actual en el formato de
 
 
 echo($nombre_Cliente);
+echo($cabina);
+echo($apellido_Cliente);
 
 
 
