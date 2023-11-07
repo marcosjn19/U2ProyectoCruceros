@@ -251,7 +251,6 @@ else{
         alert('Transacción exitosa.');
         document.getElementById('paypal-form').submit();
         window.location = 'recibo.php';
-       
       });
     }
   }).render('#paypal-button-container');
@@ -261,11 +260,5 @@ else{
     </form>
     </section>
 
-    
-    </body>
-
-
-
-
-</main>
+</main>  
 </html>

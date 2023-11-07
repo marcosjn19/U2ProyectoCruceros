@@ -13,7 +13,7 @@ $imagenBarco =$_POST['imagenBarco'];
 $destinoBarco =$_POST['destinoBarco'];
 
 //----------------actualizacion de datos del crucero
-$sql = "UPDATE crucero SET destino_crucero = '$destinoBarco',
+$sql = "UPDATE CRUCERO SET destino_crucero = '$destinoBarco',
 fechainicio_crucero = '$fechaInicio',
 fechacierre_crucero = '$fechaSalida',
 barco_crucero = '$nombreBarco', 
