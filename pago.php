@@ -164,6 +164,7 @@ if ($resultado) {
  
 
 }
+
 echo '<div id="formulario-datos" class="campo">';
 echo '<label for="nombre-cliente">Datos del cliente:</label>';
 echo '<div id="valores">';
