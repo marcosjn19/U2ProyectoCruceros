@@ -134,10 +134,7 @@ session_start();
                 <label for="tipo-cabina">Cabina seleccionada:</label>
                 <input id ="tipo-cabina" name="tipo-cabina" maxlength="30" value = <?= $filaCabina['tipo_cabina']?> type = "text" readonly = "true" style = "text-align: center;">
 			</div>
-          
-
-
-<?php
+      <?php
 //------si la hay los input toman los valores del usario si no hay pues nel
 if(isset($_SESSION['clientes'])){
     //-------revision de si hay una sesion 
@@ -161,27 +158,27 @@ if ($resultado) {
 } else {
     die("Error en la consulta: " . mysqli_error($conexion));
 }
- 
+   
+            
+
+
 
 }else{
-
 echo '<div id="formulario-datos" class="campo">';
-echo '<label for="nombre-cliente">Datos del cliente:</label>';
-echo '<div id="valores">';
-echo '<input id="nombre-cliente" name ="nombre-cliente" placeholder = "Nombre" type = "text" required>';
-echo '<input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" required>';
-echo '<input id ="correo-cliente"  name ="correo-cliente" placeholder = "Correo" type = "text" required>';
-echo '</div>';
-echo '</div>';
-   
-}        
+    echo '<label for="nombre-cliente">Datos del cliente:</label>';
+    echo '<div id="valores">';
+    echo '<input id="nombre-cliente"   name ="nombre-cliente" placeholder = "Nombre" type = "text" required>';
+    echo '<input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" required>';
+    echo '<input id ="correo-cliente"  name ="correo-cliente" placeholder = "Correo" type = "text" required>';
+    echo '</div>';
+    echo '</div>';
+}
+
+
+?>     
 
 
 
-
-
-?>
-			
             <div id="" class="campo">
                 <label>Numero de personas:</label>
                 <input id = "numPersonas" name="numPersonas" class = "number" type="number" value = "0" min = "0" max = <?php echo $capacidad?> required>

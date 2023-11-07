@@ -1,3 +1,5 @@
+
+
 <?php 
 session_start();
 
@@ -28,12 +30,8 @@ $query = mysqli_query( $conexion, $sql);
 
 //-----------------------------
 
-$consultaidrcc = "SELECT id_rcc From CABINA_CRUCERO 
-WHERE  id_crucero = '$idCrucero'
- AND id_cabina = '$idCabina' ";
+$consultaidrcc = "SELECT id_rcc From CABINA_CRUCERO WHERE  id_crucero = '$idCrucero' AND id_cabina = '$idCabina' ";
 $resultidrcc = mysqli_query($conexion, $consultaidrcc);
-
-//------------------------------------------------
 if (isset($_SESSION['clientes']) ){
 if($resultidrcc){
     $filaIdRCC = mysqli_fetch_assoc($resultidrcc);
@@ -47,8 +45,7 @@ id_rcc)
 VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc ')";
 $query1 = mysqli_query( $conexion, $sql1);
     
-    $consultaidcompra = "SELECT id_compra FROM COMPRA 
-    WHERE id_rcc = '$id_rcc' AND correo_compra = '$correo_Cliente'";
+$consultaidcompra = "SELECT id_compra FROM COMPRA WHERE id_rcc = '$id_rcc' AND correo_compra = '$correo_Cliente'";
     $resultidcompra = mysqli_query($conexion, $consultaidcompra);
 
     $consultaidcliente = "SELECT id_cliente FROM CLIENTES WHERE correo_cliente = '$correo_Cliente' AND apellido_cliente = '$apellido_Cliente'";
