@@ -163,7 +163,7 @@ if ($resultado) {
 }
  
 
-}
+}else{
 
 echo '<div id="formulario-datos" class="campo">';
 echo '<label for="nombre-cliente">Datos del cliente:</label>';
@@ -174,7 +174,7 @@ echo '<input id ="correo-cliente"  name ="correo-cliente" placeholder = "Correo"
 echo '</div>';
 echo '</div>';
    
-            
+}        
 
 
 
