@@ -77,7 +77,7 @@ personas_compra,
 total_compra, 
 correo_compra, 
 id_rcc)
-VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc ')";
+VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc')";
 $query1 = mysqli_query( $conexion, $sql1);
 }else{
     echo "error";
