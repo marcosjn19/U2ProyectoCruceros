@@ -65,7 +65,10 @@ $consultaidcompra = "SELECT id_compra FROM COMPRA WHERE id_rcc = '$id_rcc' AND c
         VALUES ('$id_compra', '$id_cliente')";
         $query2 = mysqli_query($conexion, $sql2);
 }
-}else{
+}
+}
+else{
+    if($resultidrcc){
     $filaIdRCC = mysqli_fetch_assoc($resultidrcc);
     $id_rcc = $filaIdRCC['id_rcc'];
 $sql1 ="INSERT INTO COMPRA
@@ -76,6 +79,8 @@ correo_compra,
 id_rcc)
 VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc ')";
 $query1 = mysqli_query( $conexion, $sql1);
+}else{
+    echo "error";
 }
 }
 //-------------------------------
