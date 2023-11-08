@@ -75,6 +75,8 @@ VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc 
 $query1 = mysqli_query( $conexion, $sql1);
 }
 }
+
+
 //-------------------------------
 //-----------------------
 // Crea un nuevo objeto PDF
