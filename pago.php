@@ -233,6 +233,7 @@ echo '<div id="formulario-datos" class="campo">';
       return actions.order.capture().then(function(orderData) {
         alert('Transacción exitosa.');
         document.getElementById('paypal-form').submit();
+        window.location.href = 'recibo.php';
         
       });
     }
