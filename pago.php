@@ -1,9 +1,6 @@
 <?php
 session_start();
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,23 +15,19 @@ session_start();
     <link href = "./css/styles.css" rel = "stylesheet">  
     <link rel =  "preload" href = "./css/style-compra.css" as = "style">
     <link href = "./css/style-compra.css" rel = "stylesheet">  
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Judson:wght@400;700&display=swap" rel="stylesheet">
     <!--/*font-family: 'Judson', serif;*/ -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
     <!--font-family: 'Krona One', sans-serif; -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-
 <?php
     $dbhost = "localhost";
     $dbname = "u768297978_atlanticruiser";
@@ -43,15 +36,12 @@ session_start();
     
     $id_crucero = $_GET['idcrucero'];
     $id_cabina = $_GET['idcabina'];
-
     $conexion = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname, "3306") or die
     ("PROBLEMAS DE CONEXION");
     $consultaCrucero = "SELECT * FROM CRUCERO WHERE id_crucero = '$id_crucero';";
     $resultCrucero = mysqli_query($conexion, $consultaCrucero);
-
     $consultaCabinas = "SELECT C.id_cabina, C.tipo_cabina, CC.disponible_rcc, C.refimagen_cabina, CC.precio_rcc FROM CABINA C, CABINA_CRUCERO CC WHERE C.id_cabina = '$id_cabina' AND C.id_cabina = CC.id_cabina AND CC.id_crucero='$id_crucero';";
     $resultCabinas = mysqli_query($conexion, $consultaCabinas);
-
     if (!$resultCrucero | !$resultCabinas) {
     die("Error en la consulta: " . mysqli_error($conexion));
     } else {
@@ -60,13 +50,11 @@ session_start();
         $precioCabina = $filaCabina['precio_rcc'];
         mysqli_close($conexion);    
     }
-
     if ( $filaCabina['tipo_cabina'] == "Individual"){
         $capacidad = 1;
     }else{
         $capacidad = 4;
     }
-
   
 ?>
     <section class = "encabezado">
@@ -116,8 +104,6 @@ session_start();
        
             </div>    
         </div>
-
-
     </section>
     <main id="main">
     <section id="derecha">
@@ -130,11 +116,11 @@ session_start();
 				
                 <input id="nombre-crucero" name="nombre-crucero" maxlength="100" value="<?= $fila['destino_crucero'] ?>" type="text" readonly="true" style="text-align: center;">
                 <br>
-
                 <label for="tipo-cabina">Cabina seleccionada:</label>
                 <input id ="tipo-cabina" name="tipo-cabina" maxlength="30" value = <?= $filaCabina['tipo_cabina']?> type = "text" readonly = "true" style = "text-align: center;">
 			</div>
-      <?php
+          
+<?php
 //------si la hay los input toman los valores del usario si no hay pues nel
 if(isset($_SESSION['clientes'])){
     //-------revision de si hay una sesion 
@@ -144,7 +130,6 @@ if(isset($_SESSION['clientes'])){
 $consulta = "SELECT nombre_cliente, apellido_cliente, correo_cliente FROM CLIENTES
  WHERE correo_cliente = '$id_usuario' ";
 $resultado = mysqli_query($conexion, $consulta);
-
 if ($resultado) {
     $datos_usuario = mysqli_fetch_assoc($resultado);
     echo '<div id="formulario-datos" class="campo">';
@@ -160,30 +145,23 @@ if ($resultado) {
 }
    
             
-
-
-
-}else{
-echo '<div id="formulario-datos" class="campo">';
+}
+else{
+    echo '<div id="formulario-datos" class="campo">';
     echo '<label for="nombre-cliente">Datos del cliente:</label>';
     echo '<div id="valores">';
-    echo '<input id="nombre-cliente"   name ="nombre-cliente" placeholder = "Nombre" type = "text" required>';
+    echo '<input id="nombre-cliente" name ="nombre-cliente" placeholder = "Nombre" type = "text" required>';
     echo '<input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" required>';
     echo '<input id ="correo-cliente"  name ="correo-cliente" placeholder = "Correo" type = "text" required>';
     echo '</div>';
     echo '</div>';
 }
-
-
-?>     
-
-
-
+?>
+			
             <div id="" class="campo">
                 <label>Numero de personas:</label>
                 <input id = "numPersonas" name="numPersonas" class = "number" type="number" value = "0" min = "0" max = <?php echo $capacidad?> required>
             </div>
-
             <div id = "" class = campo>
                 <label> Total a pagar: </label>
                 <input id = "totalPagar" name="totalPagar"  class = "total" type = "text" value = <?php echo '$'.$precioCabina ?> readonly = "true">
@@ -191,23 +169,18 @@ echo '<div id="formulario-datos" class="campo">';
         
             <script>
   var totalaPagar = 0; // Declaramos totalaPagar en el ámbito global y le asignamos un valor inicial
-
   document.addEventListener("DOMContentLoaded", function() {
     // Obtenemos el valor del precio de la cabina (supongamos que ya tienes esta variable PHP en tu script)
     var precioCabina = <?php echo $precioCabina; ?>;
-
     // Obtenemos referencias a los elementos de entrada
     var numPersonasInput = document.getElementById("numPersonas");
     var totalaPagarInput = document.getElementById("totalPagar");
-
     // Agregamos un event listener para escuchar los cambios en numPersonasInput
     numPersonasInput.addEventListener("input", function() {
       // Obtenemos el valor actual de numPersonas
       var numPersonas = parseInt(numPersonasInput.value);
-
       // Realizamos el cálculo del total a pagar
      totalaPagar = numPersonas * precioCabina;
-
       // Actualizamos el valor de totalaPagarInput
       totalaPagarInput.value = '$' + totalaPagar;
      
@@ -220,9 +193,7 @@ echo '<div id="formulario-datos" class="campo">';
   
   window.totalaPagar = totalaPagar;
   
-
 </script>
-
 <div class="contenedor">
   <div id="smart-button-container">
     <div style="text-align: center;">
@@ -230,7 +201,6 @@ echo '<div id="formulario-datos" class="campo">';
     </div>
   </div>
 </div>
-
 <script>
    var ola= window.totalaPagar;
   paypal.Buttons({
@@ -250,14 +220,15 @@ echo '<div id="formulario-datos" class="campo">';
         alert('Transacción exitosa.');
         document.getElementById('paypal-form').submit();
         window.location = 'recibo.php';
+
       });
     }
   }).render('#paypal-button-container');
 </script>
-
   
     </form>
     </section>
-
-</main>  
+    
+    </body>
+</main>
 </html>
