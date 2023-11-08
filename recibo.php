@@ -1,6 +1,8 @@
 <?php 
 session_start();
 
+
+
  include ('conexion.php');
  $conexion = connection();
  $idCabina = $_POST['idcabina'];
@@ -28,19 +30,12 @@ $query = mysqli_query( $conexion, $sql);
 
 //-----------------------------
 
-$consultaidrcc = "SELECT id_rcc 
-From CABINA_CRUCERO
- WHERE  id_crucero = '$idCrucero' AND id_cabina = '$idCabina' ";
-
+$consultaidrcc = "SELECT id_rcc From CABINA_CRUCERO WHERE  id_crucero = '$idCrucero' AND id_cabina = '$idCabina' ";
 $resultidrcc = mysqli_query($conexion, $consultaidrcc);
-
 if (isset($_SESSION['clientes']) ){
-
 if($resultidrcc){
-
     $filaIdRCC = mysqli_fetch_assoc($resultidrcc);
     $id_rcc = $filaIdRCC['id_rcc'];
-
 $sql1 ="INSERT INTO COMPRA
 (nombre_compra,
 personas_compra,
@@ -49,17 +44,11 @@ correo_compra,
 id_rcc)
 VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc ')";
 $query1 = mysqli_query( $conexion, $sql1);
-//--------------------------------
     
-$consultaidcompra = "SELECT id_compra 
-FROM COMPRA 
-WHERE id_rcc = '$id_rcc' AND correo_compra = '$correo_Cliente'";
-//----------------------------------------------------------------------
+$consultaidcompra = "SELECT id_compra FROM COMPRA WHERE id_rcc = '$id_rcc' AND correo_compra = '$correo_Cliente'";
     $resultidcompra = mysqli_query($conexion, $consultaidcompra);
 
-    $consultaidcliente = "SELECT id_cliente 
-    FROM CLIENTES 
-    WHERE correo_cliente = '$correo_Cliente' AND apellido_cliente = '$apellido_Cliente'";
+    $consultaidcliente = "SELECT id_cliente FROM CLIENTES WHERE correo_cliente = '$correo_Cliente' AND apellido_cliente = '$apellido_Cliente'";
     $resultidcliente = mysqli_query($conexion, $consultaidcliente);
 
     if ($consultaidcliente && $resultidcliente) {
@@ -75,10 +64,7 @@ WHERE id_rcc = '$id_rcc' AND correo_compra = '$correo_Cliente'";
         VALUES ('$id_compra', '$id_cliente')";
         $query2 = mysqli_query($conexion, $sql2);
 }
-}
-
-}
-else{
+}else{
     $filaIdRCC = mysqli_fetch_assoc($resultidrcc);
     $id_rcc = $filaIdRCC['id_rcc'];
 $sql1 ="INSERT INTO COMPRA
@@ -88,7 +74,9 @@ total_compra,
 correo_compra, 
 id_rcc)
 VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc ')";
-$query1 = mysqli_query( $conexion, $sql1);}
+$query1 = mysqli_query( $conexion, $sql1);
+}
+}
 //-------------------------------
 
 //-----------------------
@@ -165,6 +153,7 @@ $pdf->Cell(0, 10,$pago, 0, 1);
 
 // Genera el PDF
 $pdf->Output();
+
 
 
 ?>
