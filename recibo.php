@@ -16,9 +16,17 @@ $correo_Cliente= $_POST['correo-cliente'];
 $numPersonas= $_POST['numPersonas'];
 $pago= $_POST['totalPagar'];
 $fechaActual = date('Y-m-d'); // Obtiene la fecha y hora actual en el formato deseado (año-mes-día hora:minuto:segundo)
+//--------------------
+//----------------------------------
+$sql = "UPDATE CABINA_CRUCERO SET
+disponible_rcc = '0' WHERE id_crucero = '$idCrucero' and id_cabina = '$idCabina' ";
+$query = mysqli_query( $conexion, $sql);
 
-echo("ola")
 
+
+//-------------------------------
+//-----------------------
+// Crea un nuevo objeto PDF
 
 ?>
    
