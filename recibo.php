@@ -30,9 +30,7 @@ $query = mysqli_query( $conexion, $sql);
 
 $consultaidrcc = "SELECT id_rcc From CABINA_CRUCERO 
 WHERE  id_crucero = '$idCrucero' AND id_cabina = '$idCabina' ";
-
 $resultidrcc = mysqli_query($conexion, $consultaidrcc);
-
 if (isset($_SESSION['clientes']) ){
 if($resultidrcc){
     $filaIdRCC = mysqli_fetch_assoc($resultidrcc);
@@ -43,7 +41,7 @@ personas_compra,
 total_compra, 
 correo_compra, 
 id_rcc)
-VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc')";
+VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc ')";
 $query1 = mysqli_query( $conexion, $sql1);
     
 $consultaidcompra = "SELECT id_compra FROM COMPRA WHERE id_rcc = '$id_rcc' AND correo_compra = '$correo_Cliente'";
@@ -65,9 +63,7 @@ $consultaidcompra = "SELECT id_compra FROM COMPRA WHERE id_rcc = '$id_rcc' AND c
         VALUES ('$id_compra', '$id_cliente')";
         $query2 = mysqli_query($conexion, $sql2);
 }
-}
-else{
-    
+}else{
     $filaIdRCC = mysqli_fetch_assoc($resultidrcc);
     $id_rcc = $filaIdRCC['id_rcc'];
 $sql1 ="INSERT INTO COMPRA
@@ -76,12 +72,10 @@ personas_compra,
 total_compra, 
 correo_compra, 
 id_rcc)
-VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc')";
+VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc ')";
 $query1 = mysqli_query( $conexion, $sql1);
-
 }
 }
-
 //-------------------------------
 
 //-----------------------
