@@ -18,7 +18,61 @@ $pago= $_POST['totalPagar'];
 $fechaActual = date('Y-m-d'); // Obtiene la fecha y hora actual en el formato deseado (año-mes-día hora:minuto:segundo)
 //--------------------
 //----------------------------------
+$sql = "UPDATE CABINA_CRUCERO SET
+disponible_rcc = '0' WHERE id_crucero = '$idCrucero' and id_cabina = '$idCabina' ";
+$query = mysqli_query( $conexion, $sql);
+//-----------------------------
 
+$consultaidrcc = "SELECT id_rcc From CABINA_CRUCERO WHERE  id_crucero = '$idCrucero' AND id_cabina = '$idCabina' ";
+$resultidrcc = mysqli_query($conexion, $consultaidrcc);
+
+if (isset($_SESSION['clientes']) ){
+if($resultidrcc){
+    $filaIdRCC = mysqli_fetch_assoc($resultidrcc);
+    $id_rcc = $filaIdRCC['id_rcc'];
+$sql1 ="INSERT INTO COMPRA
+(nombre_compra,
+personas_compra,
+total_compra, 
+correo_compra, 
+id_rcc)
+VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc ')";
+$query1 = mysqli_query( $conexion, $sql1);
+    
+$consultaidcompra = "SELECT id_compra FROM COMPRA WHERE id_rcc = '$id_rcc' AND correo_compra = '$correo_Cliente'";
+    $resultidcompra = mysqli_query($conexion, $consultaidcompra);
+    $consultaidcliente = "SELECT id_cliente FROM CLIENTES WHERE correo_cliente = '$correo_Cliente' AND apellido_cliente = '$apellido_Cliente'";
+    $resultidcliente = mysqli_query($conexion, $consultaidcliente);
+
+    if ($consultaidcliente && $resultidcliente) {
+
+        $filaIdCompra = mysqli_fetch_assoc($resultidcompra);
+        $id_compra = $filaIdCompra['id_compra'];
+
+        $filaIdCliente = mysqli_fetch_assoc($resultidcliente);
+        $id_cliente = $filaIdCliente['id_cliente'];
+        $sql2 = "INSERT INTO COMPRA_CLIENTES
+        (id_compra, id_cliente)
+        VALUES ('$id_compra', '$id_cliente')";
+        $query2 = mysqli_query($conexion, $sql2);
+}
+}else{
+    $filaIdRCC = mysqli_fetch_assoc($resultidrcc);
+    $id_rcc = $filaIdRCC['id_rcc'];
+$sql1 ="INSERT INTO COMPRA
+(nombre_compra,
+personas_compra,
+total_compra, 
+correo_compra, 
+id_rcc)
+VALUES ('$nombre_Cliente', '$numPersonas', '$pago', '$correo_Cliente', '$id_rcc ')";
+$query1 = mysqli_query( $conexion, $sql1);
+}
+}
+//-------------------------------
+
+//-----------------------
+// Crea un nuevo objeto PDF
 $pdf = new FPDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
@@ -73,10 +127,5 @@ $pdf->SetFont('Arial', '', 30);
 $pdf->Cell(0, 10,$pago, 0, 1);
 // Genera el PDF
 $pdf->Output();
-
-//-------------------------------
-//-----------------------
-// Crea un nuevo objeto PDF
-
 ?>
    
