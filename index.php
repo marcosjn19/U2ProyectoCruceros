@@ -55,10 +55,10 @@ session_start();
 
     ?>
 
-    <section class = "encabezado" id = "scene">
-        <div class = "contenido-encabezado" data-depth="0.6"> 
+    <section class = "encabezado" >
+        <div class = "contenido-encabezado"> 
             <div class = "nav-bg">
-                <nav class = "nav-contenedor" data-depth = "1">
+                <nav class = "nav-contenedor">
                     <a class = "nav-title" href = "index.php">ATLANTIC CRUISER</a>
                     <a class = "nav-link" href = "experiencias.php">EXPERIENCIAS</a>
                     <a class = "nav-link" href = "quienes_somos.php">¿QUIENES SOMOS?</a>
@@ -99,10 +99,11 @@ session_start();
     ?>
             </nav> 
             </div>    
-
-            <div class = "mensaje layer" data-depth="0.3">
-            <p> CRUCEROS POR EL ATLANTICO DESDE</p>
-            <p class = "precio"> $9999</p>
+            <div id = "scene">
+                <div class = "mensaje layer" data-depth="0.6">
+                <p> CRUCEROS POR EL ATLANTICO DESDE</p>
+                <p class = "precio"> $9999</p>
+                </div>
             </div>
         </div>
     </section>
@@ -114,7 +115,7 @@ session_start();
             <h2 class = "cuadro subt">Experiencias inolvidables</h2>
             <p class = "cuadro descripcion">En nuestros increibles cruceros, te esperan experiencias inolvidables que te transportarán a un mundo de lujo, aventura y relajación. Desde el momento en que pisas la cubierta, te sumergirás en un viaje lleno de maravillas. Desde gastronomía de clase mundial, hasta entretenimiento de primera clase. ¡Ven a vivir la aventura en el mar y descubre todo lo que tenemos para ofrecerte!
             </p>
-            <button class = "cuadro botont1 vermas" onclick = "window.location.href='experiencias.html'">Ver más</button>
+            <button class = "cuadro botont1 vermas" onclick = "window.location.href='experiencias.php'">Ver más</button>
         </div>
     </section>
     <hr>
