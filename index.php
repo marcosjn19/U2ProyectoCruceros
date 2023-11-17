@@ -31,6 +31,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@700&display=swap" rel="stylesheet">
     <!--font-family: 'Faustina', serif; -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
@@ -154,6 +155,7 @@ session_start();
             </div>
         </div>
     </footer>
+    <script src="./scroll.js"></script>
 </body>
 
 </html>
