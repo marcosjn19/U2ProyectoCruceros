@@ -28,14 +28,15 @@
     <!--font-family: 'Faustina', serif; -->
 
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     
 </head>
 
 <body>
-    <section class = "encabezado">
-        <div class = "contenido-encabezado"> 
-            <div class = "nav-bg">
-                <nav class = "nav-contenedor">
+    <section class = "encabezado"  id = "scene">
+        <div class = "contenido-encabezado" data-depth = "0.6"> 
+            <div class = "nav-bg" >
+                <nav class = "nav-contenedor" data-depth = "1">
                     <a class = "nav-title" href = "index.html">ATLANTIC CRUISER</a>
                     <a class = "nav-link" href = "experiencias.html">EXPERIENCIAS</a>
                     <a class = "nav-link" href = "quienes_somos.html">¿QUIENES SOMOS?</a>
@@ -45,9 +46,9 @@
                 </nav> 
             </div>    
 
-            <div class = "mensaje">
-            <p> CRUCEROS POR EL ATLANTICO DESDE</p>
-            <p class = "precio"> $9999</p>
+            <div class = "mensaje layer" data-depth="0.6">
+                <p> CRUCEROS POR EL ATLANTICO DESDE</p>
+                <p class = "precio"> $9999</p>
             </div>
         </div>
     </section>
@@ -138,6 +139,7 @@
         </div>
     </footer>
     <script src="./scroll.js"></script>
+    <script src="./par.js"></script>
 </body>
 
 </html>
