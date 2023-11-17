@@ -157,6 +157,7 @@ session_start();
         </div>
     </footer>
     <script src="./scroll.js"></script>
+    <script src="./par.js"></script>
 </body>
 
 </html>
