@@ -32,6 +32,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@700&display=swap" rel="stylesheet">
     <!--font-family: 'Faustina', serif; -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </head>
 
 <body>
@@ -54,10 +55,10 @@ session_start();
 
     ?>
 
-    <section class = "encabezado">
-        <div class = "contenido-encabezado"> 
+    <section class = "encabezado" id = "scene">
+        <div class = "contenido-encabezado" data-depth="0.6"> 
             <div class = "nav-bg">
-                <nav class = "nav-contenedor">
+                <nav class = "nav-contenedor" data-depth = "1">
                     <a class = "nav-title" href = "index.php">ATLANTIC CRUISER</a>
                     <a class = "nav-link" href = "experiencias.php">EXPERIENCIAS</a>
                     <a class = "nav-link" href = "quienes_somos.php">¿QUIENES SOMOS?</a>
@@ -99,7 +100,7 @@ session_start();
             </nav> 
             </div>    
 
-            <div class = "mensaje">
+            <div class = "mensaje layer" data-depth="0.3">
             <p> CRUCEROS POR EL ATLANTICO DESDE</p>
             <p class = "precio"> $9999</p>
             </div>
