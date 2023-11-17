@@ -27,5 +27,3 @@ if ( width > 720 ){
 }else{
     ScrollReveal().reveal('.contenedor-promociones .promocion', getSlideGroup(100, 'bottom', '150%', 200, true ));
 }
-
-ScrollReveal().reveal('.experiencia .exp-img, .experiencia p', getSlideGroup(100,'bottom', '150%', 200, true));
