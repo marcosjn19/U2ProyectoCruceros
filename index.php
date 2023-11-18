@@ -99,7 +99,7 @@ session_start();
     ?>
             </nav> 
             </div>    
-            <div id = "scene">
+            <div class = "scene">
                 <div class = "mensaje layer" data-depth="0.6">
                 <p> CRUCEROS POR EL ATLANTICO DESDE</p>
                 <p class = "precio"> $9999</p>
@@ -121,12 +121,12 @@ session_start();
     <hr>
     <section class = "catalogo"> 
         <h1>Ahorra hasta $12550 con nuestras promociones</h1>
-            <div class = "contenedor-promociones" id = "scene2">  
+            <div class = "contenedor-promociones">  
             <?php foreach ($cruceros as $crucero){
 
             ?>
-                <div class = "promocion">
-                    <div class = "promocion-img" style="background-image: url('<?php echo $crucero['refimagen_crucero']; ?>');" ></div>
+                <div class = "promocion scene2">
+                    <div class = "promocion-img layer" data-depth = "0.1" style="background-image: url('<?php echo $crucero['refimagen_crucero']; ?>');" ></div>
                             <div class = "layer" data-depth = "0.1">
                             <h3><?php echo $crucero['descripcion_crucero']?></h3>
                             <p> <?php echo '$'.$crucero['precio_rcc'] ?> / Persona</p>
