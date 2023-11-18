@@ -125,8 +125,10 @@ session_start();
             <?php foreach ($cruceros as $crucero){
 
             ?>
+
                 <div class = "promocion scene2">
                     <div class = "promocion-img layer" data-depth = "0.1" style="background-image: url('<?php echo $crucero['refimagen_crucero']; ?>');" ></div>
+
                             <div class = "layer" data-depth = "0.1">
                             <h3><?php echo $crucero['descripcion_crucero']?></h3>
                             <p> <?php echo '$'.$crucero['precio_rcc'] ?> / Persona</p>
