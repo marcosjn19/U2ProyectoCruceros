@@ -121,14 +121,16 @@ session_start();
     <hr>
     <section class = "catalogo"> 
         <h1>Ahorra hasta $12550 con nuestras promociones</h1>
-            <div class = "contenedor-promociones">  
+            <div class = "contenedor-promociones" id = "scene2">  
             <?php foreach ($cruceros as $crucero){
 
             ?>
                 <div class = "promocion">
                     <div class = "promocion-img" style="background-image: url('<?php echo $crucero['refimagen_crucero']; ?>');" ></div>
+                            <div class = "layer" data-depth = "0.1">
                             <h3><?php echo $crucero['descripcion_crucero']?></h3>
                             <p> <?php echo '$'.$crucero['precio_rcc'] ?> / Persona</p>
+                            </div>
                             <div class = "informacion">
                                 <svg class = "icono-info"fill="#000000" viewBox="0 -27.24 122.88 122.88" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="enable-background:new 0 0 122.88 68.39" xml:space="preserve">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0">

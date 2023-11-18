@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,6 +30,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@700&display=swap" rel="stylesheet">
     <!--font-family: 'Faustina', serif; -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </head>
 
 <body>
@@ -86,18 +85,18 @@ session_start();
     <hr>
 
     <section class = "main-experiencias">
-        <div class = "contenedor-experiencias">
-            <div class = "experiencia">
+        <div class = "contenedor-experiencias" id = "scene">
+            <div class = "experiencia layer" data-depth = "0.1">
                 <div class = "exp-img exp-img1"></div>
                 <p>En nuestros cruceros, puedes deleitarte con una exquisita variedad de platos gourmet. Desde mariscos frescos capturados en alta mar hasta filetes tiernos cocinados a la perfección. Además, disfruta de degustaciones de vinos finos y postres elaborados con maestría mientras te relajas en la belleza del océano.</p>
             </div>
 
-            <div class = "experiencia">
+            <div class = "experiencia layer" data-depth = "0.1">
                 <div class = "exp-img exp-img2"></div>
                 <p>A bordo de nuestros cruceros, el entretenimiento es incomparable. Desde espectáculos de Broadway en el teatro principal hasta conciertos en vivo con artistas de renombre mundial. Disfruta de casinos elegantes, cines bajo las estrellas y fiestas temáticas en cubierta. La diversión nunca termina en alta mar.</p>
             </div>
 
-            <div class = "experiencia">
+            <div class = "experiencia layer" data-depth = "0.1">
                 <div class = "exp-img exp-img3"></div>
                 <p>En nuestros cruceros se ofrecen fiestas inolvidables. Desde elegantes cócteles en la cubierta superior hasta noches de baile en la discoteca con DJ de clase mundial. También hay fiestas temáticas, como noches de disfraces extravagantes y eventos exclusivos para invitados VIP. Celebra en grande mientras navegas.</p>
             </div>
@@ -114,5 +113,6 @@ session_start();
         </div>
     </footer>
     <script src="./scroll.js"></script>
+    <script src="./par.js"></script>
 </body>
 </html>
