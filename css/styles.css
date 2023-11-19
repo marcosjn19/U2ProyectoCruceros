@@ -474,6 +474,13 @@ footer {
     background-image: url(/media/picina.jpg);
 }
 
+.exp-img4 {
+    background-image: url(/media/crucero-koala.jpg);
+}
+
+.exp-img5{
+    background-image: url(/media/hashbullaTest.jpeg);
+}
 /*---------------------MODAL------------------------------------*/
 
 .modal {
@@ -715,4 +722,66 @@ footer {
 
 .contenido-info{
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.wrapper-carrusel {
+    margin-top: auto;
+    display:flex;
+    align-items: center;
+    width: 100%;
+}
+
+.contenido-carrusel{
+    margin: auto;
+    max-width: 100%;
+}
+
+.carrusel {
+    max-width: 80%;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.carrusel .tarjeta {
+    width: 28rem;
+    height: 35rem;
+    background-color: var(--gris-claro  );
+    line-height: 3rem;
+    color: black;
+    margin: auto;
+    border-radius: 2rem;
+}
+
+.tarjeta .exp-img {
+    height: 20rem;
+    width: 20rem;
+}
+
+.tarjeta p {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: black;
+}
+
+.owl-dots {
+    text-align: center;
+    margin: auto;
+    margin-top: 2rem;
+}
+.owl-dot {
+    height: 1.5rem;
+    width: 4.5rem;
+    border: .2rem solid var(--resalte)!important;
+    cursor: pointer;
+    outline: none;
+    margin: 0 1rem;
+    border-radius: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.owl-dot:hover,
+.owl-dot.active{
+    background: var(--resalte)!important;
 }

@@ -33,6 +33,9 @@ session_start();
     <!--font-family: 'Faustina', serif; -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 </head>
 
 <body>
@@ -118,6 +121,27 @@ session_start();
             <button class = "cuadro botont1 vermas" onclick = "window.location.href='experiencias.php'">Ver más</button>
         </div>
     </section>
+
+    <hr>
+    <h1>Disfruta nuestros cruceros</h1>
+    <section class = "wrapper-carrusel">
+        <div class = "contenido-carrusel">
+            <div class = "carrusel owl-carousel">
+                <div class = "tarjeta tarjeta-1"><div class = "exp-img exp-img1"></div>
+                <p>Buffets ilimitados con <br> alta gastronomia</p>
+                </div>
+                <div class = "tarjeta tarjeta-2"><div class = "exp-img exp-img2"></div>
+                <p>Descubre viajes con fiestas increíbles</p></div>
+                <div class = "tarjeta tarjeta-3"><div class = "exp-img exp-img3"></div>
+                <p>Explora destinos, experiencias familiares inolvidables.</p></div>
+                <div class = "tarjeta tarjeta-4"><div class = "exp-img exp-img4"></div>
+                <p>Cruceros totalmente equipados</p></div>
+                <div class = "tarjeta tarjeta-5"><div class = "exp-img exp-img5"></div>
+                <p>Convive con celebridades</p></div>
+            </div>
+        </div>
+    </section>
+
     <hr>
     <section class = "catalogo"> 
         <h1>Ahorra hasta $12550 con nuestras promociones</h1>
@@ -125,8 +149,8 @@ session_start();
             <?php foreach ($cruceros as $crucero){
 
             ?>
-
                 <div class = "promocion scene2">
+
                     <div class = "promocion-img" style="background-image: url('<?php echo $crucero['refimagen_crucero']; ?>');" ></div>
 
                             <div class = "layer" data-depth = "0.1">
@@ -163,6 +187,33 @@ session_start();
     </footer>
     <script src="./scroll.js"></script>
     <script src="./par.js"></script>
+    <script>
+        $('.carrusel').owlCarousel({
+            margin: 14,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            responsive: {
+                0:{
+                    items: 1,
+                    nav: false
+                },
+                768:{
+                    items: 2,
+                    nav: false
+                },
+                1000:{
+                    items: 3,
+                    nav: false
+                },
+                1280:{
+                    items: 4,
+                    nav: false
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
