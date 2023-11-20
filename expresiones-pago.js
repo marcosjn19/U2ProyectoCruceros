@@ -67,12 +67,11 @@ inputs.forEach((input) => {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (campos.nombre && campos.Apellido && campos.Correo_Electronico) {
-        // solo si y solo si Todas las validaciones son exitosas se va enviar mediante esto
+    if (campos.nombre && campos.apellido && campos.correo) {
+        // solo si y solo si todas las validaciones son exitosas se va enviar mediante esto
         form.submit();
     } else {
-        // si no Mostraremos un mensaje de error para que solucione los problemszzz
+        // si no Mostraremos un mensaje de error para que solucione los problemas
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
 });
-
