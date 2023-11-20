@@ -1,9 +1,6 @@
 const form = document.getElementById('paypal-form');
 const inputs = document.querySelectorAll('#paypal-form input');
 
-
-
-
 const expresiones = {
 	 // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, 
