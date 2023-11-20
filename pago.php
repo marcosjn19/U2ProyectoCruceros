@@ -15,6 +15,9 @@ session_start();
     <link href = "./css/styles.css" rel = "stylesheet">  
     <link rel =  "preload" href = "./css/style-compra.css" as = "style">
     <link href = "./css/style-compra.css" rel = "stylesheet">  
+
+    <script src="https://kit.fontawesome.com/37d2d128ef.js" crossorigin="anonymous"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Judson:wght@400;700&display=swap" rel="stylesheet">
