@@ -9,7 +9,7 @@ session_start();
 $correo_log = $_POST['correo_log'];
 $pass_log = $_POST['pass_log'];
 
-if($correo_log == "admin" && $pass_log =="admin"){
+if($correo_log == "admin@admin.com" && $pass_log =="admin"){
     (header("Location: admin.php"));
 }
 
