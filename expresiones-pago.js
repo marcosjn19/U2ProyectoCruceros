@@ -11,7 +11,7 @@ const expresiones = {
 
 const campos = {
 	nombre : false,
-    Apellido: false,
+    apellido: false,
 	correo: false,
 
 }
@@ -23,7 +23,7 @@ const validarFormulario = (e) => {
 			validarCampo(expresiones.nombre, e.target, 'nombre');
 		break;
         case "apellido-cliente":
-			validarCampo(expresiones.Apellido, e.target, 'Apellido');
+			validarCampo(expresiones.Apellido, e.target, 'apellido');
 		break;
 
         case"correo-cliente":

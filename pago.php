@@ -165,7 +165,7 @@ echo '<div id="formulario-datos" class="campo">';
     echo'<p class="formulario__input-error style="color:#fff;">El nombre tiene que ser de 4 a 16 y solo letras </p>';
     echo'</div>';
 
-    echo '<div class="formulario__grupo" id="grupo__Apellido">';
+    echo '<div class="formulario__grupo" id="grupo__apellido">';
     echo '<div class="formulario__grupo-input">';
     echo '<input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" required>';
     echo '<i class="formulario__validacion-estado fas fa-times-circle" style="font-size: 20px;"></i>';
