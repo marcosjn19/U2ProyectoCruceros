@@ -277,10 +277,7 @@ echo '<div id="formulario-datos" class="campo">';
   
     </form>
     </section>
-
+    <script src="expresiones-pago.js"></script>
 </main>  
-<script src="expresiones-pago.js"><script>
-
-    </body>
-</main>
+  </body>
 </html>
