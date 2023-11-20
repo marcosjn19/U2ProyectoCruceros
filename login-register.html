@@ -43,43 +43,109 @@
         </div>
     </section>
     <main>
-    <div class="contedor__todo">
-        <div class="parte-trasera">
-            <div class = "parte-trasera-login">
-                <h3>¿Tienes una cuenta?</h3>
-                <p> Inicia sesion para comprar</p>
-                <button id="btn-iniciar-sesion">Inicia Sesion</button>
+        <div class="contedor__todo">
+            <div class="parte-trasera">
+                <div class = "parte-trasera-login">
+                    <h3>¿Tienes una cuenta?</h3>
+                    <p> Inicia sesion para comprar</p>
+                    <button id="btn-iniciar-sesion">Inicia Sesion</button>
+                </div>
+                <div class = "parte-trasera-registro">
+                    <h3>¿Aun no tienes cuenta?</h3>
+                    <p> Regitrate para ingresar</p>
+                    <button id="btn-resgistrar">Registrate</button>
+                </div>
             </div>
-            <div class = "parte-trasera-registro">
-                <h3>¿Aun no tienes cuenta?</h3>
-                <p> Regitrate para ingresar</p>
-                <button id="btn-resgistrar">Registrate</button>
+    
+            <!--Formulario de Login y registro-->
+            <div class="contenedor__login-registro">
+                <!--Login-->
+                <form action="login-usuario.php"  id="formulario-login" method="post" class="formulario-login">
+                    <h2>Iniciar Sesión</h2>
+                    
+                    <div class="formulario__grupo" id="grupo__correo_log">		
+                        <div class="formulario__grupo-input">
+                            <input type="text" placeholder="Correo Electronico" name ="correo_log" id="correo_log" class="formulario__input">           
+                            <i class="formulario__validacion-estado fas fa-times-circle" style="font-size: 20px;"></i>
+                        </div>
+                            <p class="formulario__input-error">correo incorrecto</p>
+                    </div>
+                    
+                    
+                    <input type="password" placeholder="Contraseña" name = "pass_log">
+
+                    <div class="formulario__mensaje-log" id="formulario__mensaje-log">
+                        <p> <b>Error:</b> ingrese correctamente los valores </p>
+                    </div>
+        
+                    <button>Entrar</button>
+                </form>
+    
+    <!----------------Registro-->
+                <form action="registro-usurio.php" method="post" class="formulario-registro" id="formulario-registro">
+                    <h2>Regístrarse</h2>       
+    
+    
+                <!---------------nombre-------------------------------->
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <div class="formulario__grupo-input">
+                        <input type="text" placeholder="Nombre completo" id="nombre" name="nombre" class="formulario__input">                    
+                        <i class="formulario__validacion-estado fas fa-times-circle" style="font-size: 20px;"></i>
+                    </div>
+                        <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 y solo letras </p>
+                    </div>
+    
+                    <!------------------------Apellido---------------- -->
+                    <div class="formulario__grupo" id="grupo__Apellido">
+                        <div class="formulario__grupo-input">
+                            <input type="text" placeholder="Apellido" id="Apellido" name="Apellido" class="formulario__input"> 
+                            <i class="formulario__validacion-estado fas fa-times-circle" style="font-size: 20px;"></i>
+                        </div>
+                            <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 y solo letras </p>
+                    </div>
+    
+        <!------------------- correo ------------------------>     
+                <div class="formulario__grupo" id="grupo__Correo_Electronico">		
+                    <div class="formulario__grupo-input">
+                        <input type="text" placeholder="Correo Electronico" id = "Correo_Electronico" name="Correo_Electronico" class="formulario__input">             
+                        <i class="formulario__validacion-estado fas fa-times-circle" style="font-size: 20px;"></i>
+                    </div>
+                        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo y un @ y.com</p>
+                </div>
+
+    <!-------------------- telefono ------------------>
+            <div class = "formulario__grupo" id = "grupo__telefono" >		
+                <div class = "formulario__grupo-input" >
+                    <input type= "text" placeholder= "telefono" id= "telefono" name= "telefono"  class= "formulario__input">
+                    <i class = "formulario__validacion-estado fas fa-times-circle" style = "font-size: 20px;"></i>
+                </div>
+                    <p class="formulario__input-error">El telefono debe tener solo 14 numeros </p>
+            </div>
+
+    <!------------------------Contraseña ------------------------>
+            <div class = "formulario__grupo" id = "grupo__Contraseña" >		
+                    <div class="formulario__grupo-input">
+                        <input type = "password" placeholder = "Contraseña" name = "Contraseña" id="Contraseña" class="formulario__input">
+                        <i class="formulario__validacion-estado fas fa-times-circle" style="  font-size: 20px;"></i>
+                    </div>
+                    <p class="formulario__input-error">la contraseña debe tener 4 a 12 digitos </p>
+            </div>
+
+
+            <div class="formulario__mensaje" id="formulario__mensaje">
+				<p> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
+
+            <button>Regístrarse</button>
+                </form>
             </div>
         </div>
-
-        <!--Formulario de Login y registro-->
-        <div class="contenedor__login-registro">
-            <!--Login-->
-            <form action="login-usuario.php" method="post" class="formulario-login">
-                <h2>Iniciar Sesión</h2>
-                <input type="text" placeholder="Correo Electronico" name ="correo_log">
-                <input type="password" placeholder="Contraseña" name = "pass_log">
-                <button>Entrar</button>
-            </form>
-
-            <!--Registro-->
-            <form action="registro-usurio.php" method="post" class="formulario-registro">
-                <h2>Regístrarse</h2>
-                <input type="text" placeholder="Nombre completo" name="Nombre">
-                <input type="text" placeholder="Apellido" name="Apellido">
-                <input type="text" placeholder="Correo Electronico" name="Correo_Electronico">
-                <input type="text" placeholder="telefono" name="telefono">
-                <input type="password" placeholder="Contraseña" name="Contraseña">
-                <button>Regístrarse</button>
-            </form>
-        </div>
-    </div>
-</main>
-<script src="login.js"></script>
+    </main>
+    
+    
+    
+    <script src="login.js"></script>
+    <script src = "expresiones.js"></script>
+   
 </body>
 </html>
