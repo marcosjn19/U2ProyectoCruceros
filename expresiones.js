@@ -84,7 +84,7 @@ inputs2.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 
-form2.addEventListener('button', (e) => {
+form2.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (campos.correo_log) {
