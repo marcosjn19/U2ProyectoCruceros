@@ -181,9 +181,9 @@ echo '<div id="formulario-datos" class="campo">';
     echo '<p class="formulario__input-error" style="color:#fff;">El correo es incorrecto</p>';
     echo '</div>';
 
-    echo ' <div class="formulario__mensaje" id="formulario__mensaje">
-    <p> <b>Error:</b> ingrese correctamente los valores </p>
-</div>';
+    echo ' <div class="formulario__mensaje" id="formulario__mensaje">';
+    echo'<p> <b>Error:</b> ingrese correctamente los valores </p>';
+echo '</div>';
 
     echo '</div>';
     echo '</div>';

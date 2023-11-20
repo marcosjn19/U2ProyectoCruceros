@@ -64,14 +64,17 @@ inputs.forEach((input) => {
 
 
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
 
-    if (campos.nombre && campos.apellido && campos.correo) {
-        // solo si y solo si todas las validaciones son exitosas se va enviar mediante esto
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+
+	if(campos.nombre &&  campos.correo && campos.apellido  ){
+	
+
         form.submit();
-    } else {
-        // si no Mostraremos un mensaje de error para que solucione los problemas
-        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-    }
+	} else {
+		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+	}
 });
