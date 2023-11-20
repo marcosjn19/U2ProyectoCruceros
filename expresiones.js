@@ -89,7 +89,7 @@ form2.addEventListener('submit', (e) => {
 
     if (campos.correo_log) {
         // Todas las validaciones son exitosas, puedes enviar el formulario al archivo PHP
-        form.submit();
+        form2.submit();
     } else {
         // Mostrar un mensaje de error o realizar alguna acción si las validaciones fallan
         document.getElementById('formulario__mensaje-log').classList.add('formulario__mensaje-log-activo');
