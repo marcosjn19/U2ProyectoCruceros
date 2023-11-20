@@ -84,7 +84,17 @@ inputs2.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 
+form2.addEventListener('button', (e) => {
+    e.preventDefault();
 
+    if (campos.correo_log) {
+        // Todas las validaciones son exitosas, puedes enviar el formulario al archivo PHP
+        form.submit();
+    } else {
+        // Mostrar un mensaje de error o realizar alguna acción si las validaciones fallan
+        document.getElementById('formulario__mensaje-log').classList.add('formulario__mensaje-log-activo');
+    }
+});
 
 
 form.addEventListener('submit', (e) => {
@@ -99,14 +109,3 @@ form.addEventListener('submit', (e) => {
     }
 });
 
-form2.addEventListener('button', (e) => {
-    e.preventDefault();
-
-    if (campos.correo_log) {
-        // Todas las validaciones son exitosas, puedes enviar el formulario al archivo PHP
-        form.submit();
-    } else {
-        // Mostrar un mensaje de error o realizar alguna acción si las validaciones fallan
-        document.getElementById('formulario__mensaje-log').classList.add('formulario__mensaje-log-activo');
-    }
-});
