@@ -99,10 +99,10 @@ form.addEventListener('submit', (e) => {
     }
 });
 
-form2.addEventListener('submit', (e) => {
+form2.addEventListener('button', (e) => {
     e.preventDefault();
 
-    if ( campos.correo_log) {
+    if (campos.correo_log) {
         // Todas las validaciones son exitosas, puedes enviar el formulario al archivo PHP
         form.submit();
     } else {
