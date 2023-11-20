@@ -1,6 +1,6 @@
 .contedor__todo{
     width: 100%;
-    max-width: 80rem;
+    max-width: 90rem;
     margin: auto;
     position: relative;
 
@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     backdrop-filter: blur(10px);
-    background-color: rgba(253, 172, 34, 0.8);
+    background-color: rgba(238, 103, 20, 0.8);
 
 }
 
@@ -86,7 +86,7 @@
     margin-top: 20px;
     padding: 10px;
     border: none;
-    background: #F2F2F2;
+    background: #f3f3f3;
     font-size: 16px;
     outline: none;
 }
@@ -111,6 +111,103 @@
 .formulario-registro{
     display: none;
 }
+.formulario__input-error {
+	font-size: 12px;
+    color: #000;
+	margin-bottom: 0;
+	display: none;
+    
+}
+
+.formulario__input-error-activo {
+	display: block;
+    color: #000;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+    color: #000;
+	background: #e52121;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-log {
+	height: 45px;
+	line-height: 45px;
+    color: #000;
+	background: #e52121;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__mensaje-log-activo {
+	display: block;
+}
+
+.formulario__mensaje-log p {
+	margin: 0;
+}
+
+.formulario__grupo-input {
+    position: relative;
+}
+
+.formulario__grupo-input input {
+    padding-right: 30px; /* Ajusta el espacio a la derecha para el ícono */
+}
+
+.formulario__grupo-input i {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Ajusta la posición a la derecha del ícono */
+    transform: translateY(-50%);
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto   .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+.formulario__grupo-correcto   .formulario__input {
+	border: 3px solid #63bb29;
+}
+
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
 
 @media (max-width: 850px){
     main{
