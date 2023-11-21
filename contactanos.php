@@ -102,7 +102,7 @@ session_start();
                     </p>
                     <p>
                         <label> Telefono</label>
-                        <input type="tel" name="Telefono"value="724862" readonly>
+                        <input type="tel" name="Telefono"value="+(52) 81231232312 " readonly>
                     </p>
                     <p>
                         <label> Asunto</label>
