@@ -159,7 +159,7 @@ echo '<div id="formulario-datos" class="campo">';
   
     echo '<div class="formulario__grupo" id="grupo__nombre">';
     echo '<div class="formulario__grupo-input">';
-    echo '<input id="nombre-cliente"   name ="nombre-cliente" placeholder = "Nombre" type = "text" required>';
+    echo '<input class="formulario__input id="nombre-cliente"   name ="nombre-cliente" placeholder = "Nombre" type = "text" required>';
     echo '<i class="formulario__validacion-estado fas fa-times-circle" style="font-size: 20px;"></i>';
     echo'</div>';
     echo'<p class="formulario__input-error style="color:#fff;">El nombre tiene que ser de 4 a 16 y solo letras </p>';
@@ -167,7 +167,7 @@ echo '<div id="formulario-datos" class="campo">';
 
     echo '<div class="formulario__grupo" id="grupo__apellido">';
     echo '<div class="formulario__grupo-input">';
-    echo '<input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" required>';
+    echo '<input  class="formulario__input id="apellido-cliente" name ="apellido-cliente" placeholder = "Apellido" type = "text" required>';
     echo '<i class="formulario__validacion-estado fas fa-times-circle" style="font-size: 20px;"></i>';
     echo'</div>';
     echo'<p class="formulario__input-error style="color:#fff;">apellido tiene que ser de 4 a 16 y solo letras </p>';
@@ -175,7 +175,7 @@ echo '<div id="formulario-datos" class="campo">';
 
     echo '<div class="formulario__grupo" id="grupo__correo">';
     echo '<div class="formulario__grupo-input">';
-    echo '<input id="correo-cliente" name="correo-cliente" placeholder="Correo" type="text" required>';
+    echo '<input  class="formulario__input id="correo-cliente" name="correo-cliente" placeholder="Correo" type="text" required>';
     echo '<i class="formulario__validacion-estado fas fa-times-circle" style="font-size: 20px;"></i>';
     echo '</div>';
     echo '<p class="formulario__input-error" style="color:#fff;">El correo es incorrecto</p>';
