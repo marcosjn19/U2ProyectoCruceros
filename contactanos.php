@@ -94,23 +94,23 @@ session_start();
                 <form action="">
                     <p>
                         <label>Emprea</label>
-                        <input type="text" name="nombre-completo" value="Atalntic cruisere">
+                        <input type="text" name="nombre-completo" value="Atalntic cruisere" readonly>
                     </p>
                     <p>
                         <label>Email</label>
-                        <input type="email" name="email" value="atlantiCrusier@atlantic.com">
+                        <input type="email" name="email" value="atlantiCrusier@atlantic.com" readonly>
                     </p>
                     <p>
                         <label> Telefono</label>
-                        <input type="tel" name="Telefono"value="724862">
+                        <input type="tel" name="Telefono"value="724862" readonly>
                     </p>
                     <p>
                         <label> Asunto</label>
-                        <input type="text" name="asunto" value="La mejor empresa en tematica de viajes en curcero"> 
+                        <input type="text" name="asunto" readonly value="La mejor empresa en tematica de viajes en curcero"> 
                     </p>
                     <p class="block">
                         <label> Mensaje</label>
-                        <textarea name="mensaje" rows="3" >Ven y Contactanos a antlantic cruisere la empresa que te dara un viaje de maravilla</textarea>
+                        <textarea name="mensaje" rows="3" readonly>Ven y Contactanos a antlantic cruisere la empresa que te dara un viaje de maravilla</textarea>
                     </p>
 
                     <p class="block">
