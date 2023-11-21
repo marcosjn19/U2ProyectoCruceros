@@ -197,7 +197,7 @@ h1{
 
 .formulario__grupo-input i {
     position: absolute;
-    top: 30%;
+    top: 40%;
     right: 10px; /* Ajusta la posición a la derecha del ícono */
     transform: translateY(-50%);
 }
