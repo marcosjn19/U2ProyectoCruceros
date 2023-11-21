@@ -162,7 +162,6 @@ h1{
 	
     color: #ffffff;
 	
-    
 }
 
 
@@ -198,7 +197,7 @@ h1{
 
 .formulario__grupo-input i {
     position: absolute;
-    top: 40%;
+    top: 30%;
     right: 10px; /* Ajusta la posición a la derecha del ícono */
     transform: translateY(-50%);
 }
