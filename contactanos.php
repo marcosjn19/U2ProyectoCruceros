@@ -93,24 +93,24 @@ session_start();
                 <h3>contactanos</h3>
                 <form action="">
                     <p>
-                        <label>Nombre Completo</label>
-                        <input type="text" name="nombre-completo">
+                        <label>Emprea</label>
+                        <input type="text" name="nombre-completo" value="Atalntic cruisere">
                     </p>
                     <p>
                         <label>Email</label>
-                        <input type="email" name="email">
+                        <input type="email" name="email" value="atlantiCrusier@atlantic.com">
                     </p>
                     <p>
                         <label> Telefono</label>
-                        <input type="tel" name="Telefono">
+                        <input type="tel" name="Telefono"value="724862">
                     </p>
                     <p>
                         <label> Asunto</label>
-                        <input type="text" name="asunto"> 
+                        <input type="text" name="asunto" value="La mejor empresa en tematica de viajes en curcero"> 
                     </p>
                     <p class="block">
                         <label> Mensaje</label>
-                        <textarea name="mensaje" rows="3"></textarea>
+                        <textarea name="mensaje" rows="3" >Ven y Contactanos a antlantic cruisere la empresa que te dara un viaje de maravilla</textarea>
                     </p>
 
                     <p class="block">
